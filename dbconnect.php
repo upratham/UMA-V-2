@@ -1,10 +1,10 @@
 <?php
 //Database credentials
-$sname = "localhost";
-$uname = "root";
-$db_password = "Captain@56";
-$db_name = "virtual_lab_sim";
-$port = 3307; // Specify the port
+$sname = "sql5.freesqldatabase.com";
+$uname = "sql5766902";
+$db_password = "s2tUS6CUP4";
+$db_name = "sql5766902";
+$port = 3306; // Specify the port
 
 // $sname = "localhost";
 // $uname = "root";
