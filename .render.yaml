@@ -3,7 +3,7 @@ services:
     name: php-backend
     runtime: docker
     plan: free
-    repo: https://github.com/YOUR_USERNAME/YOUR_PHP_REPO
+    repo: https://github.com/upratham/UMA-V-2.git
     region: oregon
     branch: main
     dockerfilePath: Dockerfile
