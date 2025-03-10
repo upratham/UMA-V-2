@@ -63,9 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect to the appropriate homepage based on role
             if ($role === 'director') {
-                header("Location: homepage_d.php");
+                header("Location:  /var/www/html/homepage_d.php");
             } else {
-                header("Location: homepage/homepage.html");
+                header("Location:  /var/www/html/homepage/homepage.html");
             }
             exit();
         } else {
