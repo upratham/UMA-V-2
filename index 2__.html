@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            width: 90%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            height: auto;
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-section {
+            background-color: #f7c8d0;
+            padding: 5px;
+        }
+
+        .left-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .right-section {
+            padding: 40px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .right-section h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 2em;
+        }
+
+        .right-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .right-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .right-section label {
+            margin-bottom: 5px;
+            color: #666;
+            width: 100%;
+        }
+
+        .right-section input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 3px solid #ccc;
+            width: 100%;
+        }
+
+        .error-border {
+            border-left: 5px solid red;
+        }
+
+        .radio-container {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .radio-container label {
+            margin-right: 5px;
+            color: #666;
+        }
+
+        .right-section button {
+            padding: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .right-section button:hover {
+            background-color: #c0392b;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid red;
+            background-color: #ffe6e6;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Function to check for error parameter in the URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            if (error === 'invalid_credentials') {
+                alert('Invalid Username, Password, or Role');
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-section">
+            <img src="Images/logo_UMA.png" alt="UMA Logo">
+        </div>
+        <div class="right-section">
+            <h1>laboratorio virtual</h1>
+            <h2>Acceso</h2>
+            <form action="login_processes.php" method="POST">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña::</label>
+                <input type="password" id="password" name="password" required>
+                <div class="radio-container">
+                    <label for="studentRole">
+                        <input type="radio" id="studentRole" name="role" value="student" checked> Alumno
+                    </label>
+                    <label for="directorRole">
+                        <input type="radio" id="directorRole" name="role" value="director"> Director
+                    </label>
+                </div>
+                <button type="submit">Acceso</button>
+            </form>
+        </form>
+        <div class="login-link">
+            ¿No tienes una cuenta?<a href="register.html"> Regístrate aquí</a>
+        </div>
+    </div>
+        </div>
+    </div>
+</body>
+</html>

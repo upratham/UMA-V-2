@@ -1,0 +1,269 @@
+/* Basic reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #fff; /* Default white background */
+    color: #000; /* Text color set to black */
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+/* Body - Index Page */
+body#index-page {
+    background: url('Images/uma fRONT.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: flex-start; /* Align content at the top */
+    color: #000; /* Text color set to black */
+}
+
+/* Logo in the upper left corner */
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    
+}
+
+.site-logo {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    text-align: ce;
+}
+
+/* Virtual Lab Section */
+#virtual-lab, #practicals {
+    color: #000; /* Text color set to black */
+    text-align: left; /* Align text to the left */
+    margin-left: 20px; /* Align content to the left */
+    margin-top: 150px; /* Adjusted to push content below the larger logo */
+    max-width: 800px;
+}
+
+.lab-content {
+    margin: 0 auto;
+}
+
+/* Subject Buttons */
+.subject-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to next row */
+    gap: 15px; /* Space between buttons */
+    margin: 20px 0;
+}
+
+.lab-button {
+    background: rgba(255, 255, 255, 0.2); /* Transparent button */
+    color: #000; /* Text color set to black */
+    padding: 15px 30px; /* Ensure all buttons have the same padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #000; /* Border color set to black */
+    width: 48%; /* Adjust the width for two buttons per row */
+    text-align: center; /* Center the text inside the button */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.lab-button:hover {
+    background: rgba(255, 255, 255, 0.4); /* Slightly more visible on hover */
+    color: #000;
+}
+
+
+
+
+/* Content Section for Anatomy */
+#anatomy-content {
+    color: #000; /* Text color set to black */
+    text-align: left; /* Align text to the left */
+    margin-left: 20px; /* Align content to the left */
+    margin-top: 150px; /* Adjusted to push content below the larger logo */
+    max-width: 800px;
+}
+
+.anat-content {
+    margin: 0 auto;
+}
+
+/* Anatomy Page Specific Styles */
+body#anatomy-page {
+    background: url('Images/human_anatomy.jpg') no-repeat top center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    text-align: center; /* Center text */
+}
+
+/* Content Section for Anatomy */
+#anatomy-content {
+    color: #000; /* Text color set to black */
+    max-width: 800px;
+}
+
+/* Center content within the section */
+.anat-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Subject Buttons for Anatomy */
+#anatomy-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center buttons */
+    margin: 20px 0;
+}
+
+.anat-button {
+    background: rgba(255, 255, 255, 0.2); /* Transparent button */
+    color: #000; /* Text color set to black */
+    padding: 15px 30px; /* Ensure all buttons have the same padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #000; /* Border color set to black */
+    width: 24%; /* Adjust the width for two buttons per row */
+    text-align: center; /* Center the text inside the button */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.anat-button:hover {
+    background: rgba(255, 255, 255, 0.4); /* Slightly more visible on hover */
+    color: #000;
+}
+/* Specific styles for Practical Pages */
+.practical-header {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.practical-logo {
+    width: 180px; /* Adjust the size as needed */
+    height: auto;
+}
+
+#practical-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 100px auto 0 auto; /* Add top margin to ensure content starts below the header */
+    background: #fff; /* White background for content */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/* Chemistry Page Specific Styles */
+body#chemistry-page {
+    background: url('Images/chem2.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* Practical Buttons for Chemistry */
+.practicals-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.practical-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #000;
+    width: 24%;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.practical-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+}
+/* Biology Page Specific Styles */
+body#biology-page {
+    background: url('Images/bilogy.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* Practical Buttons for Biology */
+.practicals-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.practical-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #000;
+    width: 24%;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.practical-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+}
+body#homepage header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+body#register-page {
+    background: url('Images/uma fRONT.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Text color set to black */
+}
+

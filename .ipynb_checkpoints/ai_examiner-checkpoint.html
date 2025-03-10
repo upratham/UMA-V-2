@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Examiner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="ai-examiner-page">
+    <header>
+        <img src="logo_UMA.png" alt="UMA Logo" class="site-logo">
+    </header>
+    <section id="examiner-content">
+        <h1>AI Examiner</h1>
+        
+        <!-- Form to choose a question and submit an answer -->
+        <form id="ai-examiner-form" action="/run_model" method="POST">
+            <label for="selected-question">Select a Question:</label>
+            <select id="selected-question" name="selected-question">
+                {% for question in questions %}
+                    <option value="{{ question }}">{{ question }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="student-answer">Enter your answer:</label>
+            <input type="text" id="student-answer" name="student-answer" placeholder="Type your answer here" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+        
+        <!-- Display feedback after processing the student's answer -->
+        <div id="feedback">{{ feedback }}</div>
+    </section>
+</body>
+</html>

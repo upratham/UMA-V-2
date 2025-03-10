@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Anatomy Practical 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        /* Ensures the ordered list has bold numbers */
+        ol {
+            list-style-type: decimal;
+            font-weight: bold;
+        }
+
+        ol li {
+            font-weight: normal;
+        }
+
+        ol li::marker {
+            font-weight: bold;
+        }
+
+        /* Style for images */
+        .image-container {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Sticky header for UMA logo */
+        .practical-logo {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 150px;
+        }
+
+        /* Section styling */
+        section {
+            margin: 20px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .content {
+            margin-left: 220px; /* Space for the sidebar */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar for Main Points -->
+    <div class="sidebar">
+        <h2>Content</h2>
+        <ul>
+            <li><a href="#objectives">1. Objectives</a></li>
+            <li><a href="#introduction">2. Introduction</a></li>
+            <li><a href="#compact-bone">3. Compact Bone Tissue</a></li>
+            <li><a href="#spongy-bone">4. Spongy Bone Tissue</a></li>
+            <li><a href="#joints">5. Joints</a></li>
+            <li><a href="#questionnaire">6. Questionnaire</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Sticky UMA Logo -->
+        <header class="practical-header">
+            <img src="logo_UMA.png" alt="UMA Logo" class="practical-logo" >
+        </header>
+
+        <section id="practical-content">
+            <div class="practical">
+                <h1>PRACTICE #2: <br>BONE, JOINT AND MUSCULAR STRUCTURES</h1><br>
+
+                <!-- Objectives Section -->
+                <h2 id="objectives"><strong>1. Objectives</strong></h2>
+                <ul>
+                    <li>Know the regions of the body: Bone-articular system.</li>
+                    <li>Relate the regions of the body: the skeletal-articular system and related pathologies.</li><br>
+                </ul>
+
+                <!-- Introduction Section -->
+                <h2 id="introduction"><strong>2. INTRODUCTION</strong></h2>
+                <p>Bones are classified into various types based on their shape. A long bone (such as the femur or humerus) consists of the following parts:</p>
+                <ol>
+                    <li><strong>Diaphysis:</strong> is the main cylindrical body or portion of the bone.</li>
+                    <li><strong>Epiphysis:</strong> are the proximal and distal ends of the bone.</li>
+                    <li><strong>Metaphysis:</strong> is the site of union of the diaphysis with the epiphysis; its thickness decreases with age.</li>
+                    <li><strong>Articular cartilage:</strong> is a thin layer of hyaline cartilage that covers the part of the epiphysis of a bone that articulates with another bone.</li>
+                    <li><strong>Periosteum:</strong> is a tough layer of dense connective tissue that surrounds a bone surface that does not have articular cartilage. It protects the bone, participates in the repair of fractures, collaborates in the nutrition of the bone, and serves as an insertion point for tendons and ligaments.</li>
+                    <li><strong>Medullary cavity:</strong> is the internal space of the diaphysis that contains the fatty yellow bone marrow.</li>
+                    <li><strong>Endosteum:</strong> is the layer that covers the medullary cavity, and contains cells for bone formation.</li>
+                </ol>
+
+                <div class="image-container">
+                    <img src="bone.jpg" alt="Bone" class="Bone-image" style="width: 600px;">
+                </div>
+
+                <!-- Compact Bone Tissue Section -->
+                <h2 id="compact-bone"><strong>3. Compact Bone Tissue</strong></h2>
+                <ol>
+                    <li>It forms the outer layer of all bones; it provides protection and support. It is made up of units called osteons or Haversian systems, which consist of:</li>
+                    <li>A central canal that has a longitudinal path and contains a blood vessel, called the Haversian canal.</li>
+                    <li>Concentric lamellae surrounding the Haversian canal, which are rings of hard calcified matrix.</li>
+                    <li><strong>Lacunae:</strong> spaces located between the rings of lamellae containing osteocytes.</li>
+                    <li><strong>Canaliculi:</strong> radiating from the lacunae, filled with extracellular fluid, containing extensions of osteocytes to communicate with the central canal.</li>
+                    <li>The osteons are circular and do not fit together perfectly, with areas filled with interstitial lamellae and circumferential lamellae.</li>
+                    <li><strong>Volkmann's Canals:</strong> channels through which blood vessels and nerves penetrate compact bone.</li>
+                </ol>
+
+                <!-- Spongy Bone Tissue Section -->
+                <h2 id="spongy-bone"><strong>4. Spongy Bone Tissue</strong></h2>
+                <p>It consists of lamellae arranged in an irregular network called trabeculae. In some bones, these spaces are filled with red bone marrow. 
+                    The trabeculae contain osteocytes located in lacunae with canaliculi communicating with other lacunae.</p>
+
+                <div class="image-container">
+                    <img src="tissue.jpg" alt="Tissue" class="tissue-image" style="width: 600px;">
+                </div>
+                <div class="image-container">
+                    <img src="skull_bone.jpg" alt="skull-Bone" class="skull-Bone-image" style="width: 600px;">
+                </div>
+                <div class="image-container">
+                    <img src="skull_and baby.jpg" alt="skull_and_baby" class="skull-and-baby-image" style="width: 600px;">
+                </div>
+
+                <!-- More images can follow -->
+
+                <!-- Joints Section -->
+                <h2 id="joints"><strong>5. Joints</strong></h2>
+                <p>Joints are the areas where two or more bones meet. Most joints are movable and allow bones to move. Joints consist of the following:</p>
+                <ul>
+                    <li><strong>Cartilage:</strong> Covers the surface of a bone at a joint to reduce friction.</li><br>
+                    <li><strong>Synovial Membrane:</strong> Lines the joint and secretes synovial fluid to lubricate it.</li><br>
+                    <li><strong>Ligaments:</strong> Tough elastic bands that provide joint support and limit movement.</li><br>
+                    <li><strong>Tendons:</strong> Thick connective tissue attaching muscles to bones to control movement.</li><br>
+                </ul>
+
+                <div class="image-container">
+                    <img src="skeleton_2.jpg" alt="skeleton_2" class="skeleton_2-image" style="width: 600px;">
+                </div>
+
+                <ul>
+                    <li><strong>Bursas:</strong> Fluid-filled cavities that cushion joint friction.</li><br>
+                    <li><strong>Synovial fluid:</strong> Clear, sticky fluid secreted by the synovial membrane.</li><br>
+                    <li><strong>Femur:</strong> Thigh bone</li><br>
+                    <li><strong>Tibia:</strong> Shin bone</li><br>
+                    <li><strong>Patella:</strong> Knee bone.</li><br>
+                    <li><strong>Meniscus:</strong> It is a curved part of the cartilage of the knees and other joints.</li><br>
+                    <li><strong>Enarthrosis:</strong> Ball joints, such as those of the shoulder and hip, allow backward, forward, and sideways movement.</li><br>
+                </ul>
+
+                <!-- Questionnaire Section -->
+                <h2 id="questionnaire"><strong>6. Questionnaire</strong></h2>
+                <ol>
+                    <li>Research 5 diseases related to bones and joints and identify the affected bone structures.</li>
+                    <li>Investigate treatment options for arthritis and osteoarthritis.</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
