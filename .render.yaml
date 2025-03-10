@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: php-backend
+    runtime: docker
+    plan: free
+    repo: https://github.com/YOUR_USERNAME/YOUR_PHP_REPO
+    region: oregon
+    branch: main
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 80
