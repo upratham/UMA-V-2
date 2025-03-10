@@ -6,9 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    echo $username;
-    echo $password;
-    echo $role;
 
 
     // Database connection settings
@@ -63,9 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect to the appropriate homepage based on role
             if ($role === 'director') {
-                header("Location:  /var/www/html/homepage_d.php");
+                header("Location:  homepage_d.php");
             } else {
-                header("Location:  /var/www/html/homepage/homepage.html");
+                header("Location:  homepage/homepage.html");
             }
             exit();
         } else {
