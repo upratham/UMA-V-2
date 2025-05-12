@@ -1,16 +1,16 @@
 <?php
-$servername = "sql113.infinityfree.com";
-$username = "if0_38169637";
-$password = "wouRWn6Ss32Bv";
-$database = "if0_38169637_virtula_lab_sim";
+// Updated database connection settings
+$sname = "161.97.185.246";
+$uname = "root";
+$db_password = "Uma2025.2025";
+$db_name = "virtual_lab_sim";
+$port = 3306;
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = mysqli_connect($sname, $uname, $db_password, $db_name, $port);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected successfully";
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
