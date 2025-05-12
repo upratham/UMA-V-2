@@ -1,7 +1,9 @@
-
-
 <?php
+declare(strict_types=1);
+ob_start(); // start output buffering
 session_start();
+
+// Redirect if not logged in
 if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
     header("Location: index.html");
     exit();
