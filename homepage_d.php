@@ -623,9 +623,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
       
 </ul>
 </nav>
-<a class="sb-top-header__brand brand" href="https://universidad-maria-auxiliadora-sac.b12sites.com/index" skip-data-sb="">
+<a class="sb-top-header__brand brand" href= skip-data-sb="">
     
-    <img alt="Images/logo_UMA.png" class="logo" src="./Transform Your Learning with Universidad Maria Auxiliadora SAC_files/ad1f18f2-eabf-11ef-99db-0242ac110002-png-regular_image.png">
+    <img alt="/Images/logo_UMA.png" class="logo" src="./Transform Your Learning with Universidad Maria Auxiliadora SAC_files/ad1f18f2-eabf-11ef-99db-0242ac110002-png-regular_image.png">
     
   </a>
 <div class="sb-top-header__social">
@@ -1931,10 +1931,10 @@ $(function () {
 <div class="row">
 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 <h2 class="sb-title sb-footer__branding">
-<a class="brand sb-brand-default org" href="https://universidad-maria-auxiliadora-sac.b12sites.com/" skip-data-sb="">
+<a class="brand sb-brand-default org" skip-data-sb="">
           
             <div class="brand__wrapper" skip-data-sb="">
-<img alt="Images/logo_UMA.png" class="logo" src="./Transform Your Learning with Universidad Maria Auxiliadora SAC_files/174175b0-edf7-11ef-9c41-0242ac110002-png-regular_image.png">
+<img alt="/Images/logo_UMA.png" class="logo" src="./Transform Your Learning with Universidad Maria Auxiliadora SAC_files/174175b0-edf7-11ef-9c41-0242ac110002-png-regular_image.png">
 <span class="brand__text" data-component-field="brand" data-sb-field="text" data-sb-is-link="" data-sb-type="text" data-sb-uuid="554ebb90-872d-4738-b70a-9ec17bee285d">Universidad Maria Auxiliadora SAC </span>
 </div>
           
