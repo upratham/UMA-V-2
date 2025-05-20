@@ -110,8 +110,7 @@
 </head>
 <body id="biology-page">
 <div class="user-profile">
-        <div class="user-name">Hola, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></div>
-        <div class="dropdown">
+    
             <span>perfil ▼</span>
             <div class="dropdown-content">
                 <a href="#" onclick="openModal('changePasswordModal')"> Cambiar la contraseña</a>
