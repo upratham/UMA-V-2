@@ -139,17 +139,17 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
             <h1>Prácticas de química</h1>
             <div class="practicals-buttons">
                 <a href="Chemistry_Prac_Templates\Chem_Prac_1.php" class="anat-button">Práctica 1</a>
-                <a href="Chemistry_Prac_Templates\Chem_Prac_2.php" class="anat-button">Práctica 2</a>
+                <a href="Chemistry_Prac_Templates\Chem_prac_2.php" class="anat-button">Práctica 2</a>
                 <a href="Chemistry_Prac_Templates\Chem_Prac_3.php" class="anat-button">Práctica 3</a>
                 <a href="Chemistry_Prac_Templates\Chem_Prac_4.php" class="anat-button">Práctica 4</a>
                 <a href="Chemistry_Prac_Templates\Chem_Prac_5.php" class="anat-button">Práctica 5</a>
-                <a href="Chemistry_Prac_Templates\Chem_Prac_6.php" class="anat-button">Práctica 6</a>
+                <a href="Chemistry_Prac_Templates\Chem_prac_6.php" class="anat-button">Práctica 6</a>
                 <a href="Chemistry_Prac_Templates\Chem_Prac_7_8.php" class="anat-button">Práctica 7</a>
                 <a href="Chemistry_Prac_Templates\Chem_Prac_7_8.php" class="anat-button">Práctica 8</a>
                 <a href="Chemistry_Prac_Templates\Chem_Prac_9.php" class="anat-button">Práctica 9</a>
                 <a href="Chemistry_Prac_Templates\chem_prac_10_11.php" class="anat-button">Práctica 10</a>
                 <a href="Chemistry_Prac_Templates\chem_prac_10_11.php" class="anat-button">Práctica 11</a>
-                <a href="Chemistry_Prac_Templates\chem_Prac_12.php" class="anat-button">Practical 12</a>
+                <a href="Chemistry_Prac_Templates\chem_prac_12.php" class="anat-button">Practical 12</a>
             </div>
         </div>
     </section>
