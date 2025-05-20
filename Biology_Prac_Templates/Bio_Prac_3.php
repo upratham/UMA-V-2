@@ -1,14 +1,15 @@
 <?php
-
-$practical_number = "B3"
+include '../header.php';
+$practical_number = "B3";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script> 
+
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biology PRÁCTICA N°3: EL AGUA Y LAS BIOMOLÉCULAS</title>
+    <title>Simulador UMA</title>
     <style>
         /* General Styles */
         body {
@@ -16,167 +17,183 @@ $practical_number = "B3"
             margin: 0;
             padding: 0;
             height: 100%;
-            display: flex; /* Changes display to flex to help with the layout */
-            flex-direction: column; /* Stack elements vertically */
+            background-color: #f9f9f9;
         }
 
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            padding: 20px;
+         /* Tabs Navigation */
+         .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            padding: 8px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 900;
         }
 
-        tr:hover {background-color: #D6EEEE;}
-
-        .practical-header {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
+        .tab-button {
+            padding: 12px 18px;
+            border: none;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
+        .tab-button.active {
+            background-color: #C31654;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Main Layout */
         .container {
             display: flex;
             flex-direction: row;
-            margin: 0;
-            width: 100%;
-            height: 100%;
             min-height: 100vh;
         }
 
-        /* Sidebar (Shortcuts/Contents) */
+        /* Sidebar (Table of Contents) */
         .sidebar {
             width: 20%;
-            background-color: #f4f4f4;
-            position: sticky;
-            top: 0; /* Sticks at the top of the viewport */
-            align-self: flex-start; /* Ensures sidebar stays at the top when scrolling */
-            overflow-y: auto; 
-            padding: 10px;
-            height: 100vh;
-            float:left;
-        }
-        .sidebar a {
-            text-decoration: none; 
-            color: #333;
-            display: block;
-            margin: 10px 0;
-        }
-        .sidebar a:hover {
-            background-color: #ddd;
-            padding-left: 10px;
+            background-color: white;
+            height: auto;
+            padding: 20px;
+            border-right: 2px solid #ddd;
         }
 
         .sidebar h3 {
-            font-size: 18px;
             margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .sidebar ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
         }
 
         .sidebar ul li a {
             text-decoration: none;
             color: #333;
-            transition: color 0.3s;
+            display: block;
+            padding: 6px 0;
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
 
         .sidebar ul li a:hover {
-            color: #007BFF;
-        }
-
-        /* Main Content Section */
-        #practical-content {
-            flex-grow: 1;
-            flex: 1; /* Takes the remaining space */
-            padding: 20px;
-            overflow-y: auto; /* Allows the main content to scroll */
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        /* Images styling */
-        .image-container {
-            text-align: left;
-        }
-
-        .anatomical-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .label {
+            color: #ff9800;
             font-weight: bold;
-            margin-top: 10px;
+            padding-left: 8px;
+        }
+
+        /* Practical Content */
+        #practical-content {
+            flex: 1;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ensure only one content section is visible */
+        .content {
+            display: none;
+        }
+
+        .content.active {
             display: block;
         }
-        .practical-header {
-            position: sticky;
-            top: 0;
-            background-color: white; /* Ensures the logo background stays clean when sticky */
-            z-index: 100; /* Ensures it stays above the rest of the content */
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border to the header */}
-        
-            .styled-button {
-            padding: 12px 24px; /* Larger padding for a bigger button */
+
+        /* Buttons */
+        .styled-button {
+            padding: 12px 24px;
             background-color: #E40D5E;
             color: white;
-            border: black;
-            border-radius: 8px; /* Larger border radius for a smoother look */
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 18px; /* Larger font size */
+            font-size: 18px;
             transition: background-color 0.3s ease;
-            margin-left: 20px; /* Adds space between the text and the button */
-            justify-content: center; /* Centers both the text and the button */
-            align-items: center;
+            margin-left: 20px;
             display: flex;
+            justify-content: center;
+            align-items: center;
             width: 80%;
         }
 
         .styled-button:hover {
-        background-color: #0e0d07; /* Darker color on hover */
+            background-color: #0e0d07;
         }
 
-        .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-}
+        #Video {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .video-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
 
     </style>
 </head>
+
 <body>
-    <header class="practical-header">
-        <img src="../Images/logo_UMA.png" alt="UMA Logo" class="practical-logo">
-    </header>
+<!-- Tab Navigation -->
+<div class="tabs">
+        <button class="tab-button active" onclick="openTab('Teoría')">
+        <img src="book - icon.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Teoría</button>
+
+        <button class="tab-button active" onclick="openTab('Video')">
+        <img src="logo video.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Video</button>
+
+        <button class="tab-button active" onclick="openTab('3D Modelo')">
+        <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        3D Modelo</button>
+
+        <!-- Cuestionario tab: now submits the form directly -->
+    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+    <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
+    <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
+        <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Cuestionario
+    </button>
+</form>
+</div>
 
     <div class="container">
-        <!-- Left side (Shortcuts/Headings) -->
+        <!-- Sidebar (Contents) -->
         <nav class="sidebar">
-            <h3>Contents</h3>
+        <h3>Contents</h3>
             <ul>
                 <li><a href="COMPETENCIAS">COMPETENCIAS</a></li>
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
@@ -189,14 +206,14 @@ $practical_number = "B3"
                 <li><a href="#PREPARACIÓN DE LAS MUESTRAS">PREPARACIÓN DE LAS MUESTRAS</a></li>
                 <li><a href="#PREPARACIÓN DE LOS TUBOS CONTROLES">PREPARACIÓN DE LOS TUBOS CONTROLES</a></li>
                 <li><a href="#RESULTADOS">RESULTADOS</a></li>
-                <li><a href="#CUESTIONARIO">CUESTIONARIO</a></li>
                 <li><a href="#REFERENCIAS BIBLIOGRÁFICAS">REFERENCIAS BIBLIOGRÁFICAS</a></li>
             </ul>
         </nav>
 
-        <!-- Right side (Main Content) -->
-        <section id="practical-content">
-            <div class="content">
+        <!-- Main Content Section -->
+       <section id="practical-content">
+            <!-- Theory Section -->
+            <div id="Teoría" class="content active">
                 <h1> PRÁCTICA N°3: EL AGUA Y LAS BIOMOLÉCULAS</h1>
                 <h2 id="COMPETENCIAS">I.COMPETENCIAS</h2>
                 <ol>
@@ -214,8 +231,7 @@ $practical_number = "B3"
 
                 <p>El agua es una molécula considerada como disolvente universal. Participa en los medios intracelular y extracelular gracias principalmente a dos de sus propiedades: su tendencia a formar enlaces de hidrógeno y su carácter dipolar.</p>
                 <br>
-                <br>
-                <br>
+            
 
                 <p>La solubilidad depende de la capacidad de un solvente de interactuar con un soluto con más fuerza que lo que las partículas de soluto interactúan entre sí, el agua disuelve más tipos diferentes de solutos que cualquier otro solvente. El carácter polar del agua la hace un disolvente excelente para moléculas polares y iónicas (hidrofílicas), las sustancias no polares (hidrofóbicas) son prácticamente insolubles en agua, pero solubles en disolventes no polares. </p>
                 <p>Las atracciones electrostáticas entre los dipolos de las moléculas de agua son fundamentales para las propiedades del agua en sí y para su papel como disolvente. Las moléculas de agua vecinas tienden a orientarse de manera que el hidrógeno de una molécula (el extremo positivo) apunte hacia uno de los pares de electrones del oxígeno de otra molécula de agua (el extremo negativo). La asociación intermolecular direccional resultante se conoce como puente (enlace) de hidrógeno. </p>
@@ -223,14 +239,15 @@ $practical_number = "B3"
                 <p>La evaporación del agua requiere una cantidad de energía excepcional para una molécula de su tamaño, por consiguiente, tanto el calor de evaporación como el punto de ebullición del agua son excepcionalmente elevados. Debido al alto calor de vaporización, la evaporación que ocurre durante la transpiración, tiene un notable efecto enfriador y la condensación tiene efecto de calentamiento.</p>
 
                 <div class="image-container">
-                    <img src="Photos\Biology Diagrams\Prac 3\2.jpg" alt="Fowler position" class="center">
+                    <img src="Photos\Biology Diagrams\Prac 3\2.jpg" alt="Fowler position" lass="center" style="width: 500px; height: 300px;">
                 </div>
 
                 <h3 id="Las biomoléculas">2.2	Las biomoléculas </h3>
                 <p>Una molécula es un conjunto de átomos (de un mismo elemento químico o diferentes) que están organizados e interrelacionados mediante enlaces químicos. Y si estos elementos (átomos) forman parte de los seres vivos entonces su unión dará lugar a las biomoléculas. Las biomoléculas se encuentran presentes en los seres vivos formando parte de sus células y permitiendo el adecuado funcionamiento de ellas.</p>
                 <div class="image-container">
-                    <img src="Photos\Biology Diagrams\Prac 3\3.jpg" alt="Fowler position" class="center">
+                    <img src="Photos\Biology Diagrams\Prac 3\3.jpg" alt="Fowler position" lass="center" style="width: 500px; height: 300px;">
                 </div>
+
                 <p>Según su naturaleza química, las biomoléculas pueden clasificarse en inorgánicas, como lo son el agua y las sales minerales; y, en orgánicas, como los carbohidratos, lípidos, proteínas y ácidos nucleicos.</p>
                 <br>
                 <br>
@@ -239,7 +256,7 @@ $practical_number = "B3"
                 <h3 id="MATERIALES Y MÉTODOS">III.	MATERIALES Y MÉTODOS</h3>
                 <p><strong>3.1	LOS REACTIVOS UNIVERSALES</strong></p>
                 <div class="image-container">
-                    <img src="Photos\Biology Diagrams\Prac 3\4.jpg" alt="Fowler position" class="center">
+                    <img src="Photos\Biology Diagrams\Prac 3\4.jpg" alt="Fowler position" class="center" style="width: 300px; height: 300px;">
                 </div>
                 <p>Los reactivos universales son un conjunto de reactivos químicos usados para el reconocimiento de moléculas y biomoléculas. Existen un gran número y dependiendo de su reacción pueden reconocer un grupo de ellas o una en particular.</p>
                 <br>
@@ -264,9 +281,9 @@ $practical_number = "B3"
 
                     Más que una reacción es una coloración de lípidos que se puede observar mejor cuando se hace diferencia con una fase acuosa.</p>
 
-                    <div class="image-container">
-                        <img src="Photos\Biology Diagrams\Prac 3\7.jpg" alt="Example Image" style="width: 300px; height: 300px;" class="center">
-                    </div>
+                <div class="image-container">
+                    <img src="Photos\Biology Diagrams\Prac 3\7.png" alt="Fowler position" class="center" style="width: 300px; height: 300px;">
+                </div>
                     
                     <p>La reacción positiva será aquella que presente dos fases; una fase rojo cereza donde se encuentran los lípidos y debajo de esta, una fase translúcida donde se encuentra el agua.
                     </p>
@@ -432,7 +449,7 @@ $practical_number = "B3"
                 </div>   
                 
                 <div class="image-container">
-                    <img src="Photos\Biology Diagrams\Prac 3\9.jpg" alt="Example Image" class="center">
+                    <img src="Photos\Biology Diagrams\Prac 3\9.png" alt="Fowler position" class="center" style="width: 900px; height: 300px;">
                 </div> 
                 
                 <h3 id="PROCEDIMIENTO">3.5	PROCEDIMIENTO </h3> 
@@ -483,10 +500,13 @@ $practical_number = "B3"
         </li>
     </ul>
     <div style="display: flex; gap: 20px; align-items: center;">
-        <div>
-            <img src="Photos\Biology Diagrams\Prac 3\10.jpg" alt="Muestra en tubo" class="left">
-            <img src="Photos\Biology Diagrams\Prac 3\11.jpg" alt="Muestra con reactivo" class="right">
-        </div>
+    <div class="image-container">
+                    <img src="Photos\Biology Diagrams\Prac 3\10.png" alt="Fowler position" class="center" style="width: 500px; height: 300px;">
+                </div>
+
+                <div class="image-container">
+                    <img src="Photos\Biology Diagrams\Prac 3\11.png" alt="Fowler position" class="center" style="width: 500px; height: 300px;">
+                </div>
     </div>
     <h3 id="PREPARACIÓN DE LOS TUBOS CONTROLES">PREPARACIÓN DE LOS TUBOS CONTROLES</h3>
     <p>
@@ -574,17 +594,10 @@ $practical_number = "B3"
     </table>
     <br>
     <p>Para los tubos controles, a manera de síntesis, completa la información en la tabla 2:</p>
-    <div>
-        <img src="Photos\Biology Diagrams\Prac 3\12.jpg" alt="Muestra en tubo" class="center">
-    </div>
-
-    <h3 id="CUESTIONARIO">VI.	CUESTIONARIO</h3>
-    <form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
-
+    <div class="image-container">
+                    <img src="Photos\Biology Diagrams\Prac 3\12.png" alt="Fowler position" class="center" style="width: 500px; height: 300px;">
+                </div>
+    
     
 
     <h3 id="REFERENCIAS BIBLIOGRÁFICAS">VI.	REFERENCIAS BIBLIOGRÁFICAS</h3>
@@ -669,3 +682,104 @@ $practical_number = "B3"
             </tr>
         </tbody>
     </table>
+    </div>
+
+<!-- Video Section -->
+<div id="Video" class="content">
+  <h3 class="video-title">Video</h3>
+  <p class="video-description">Aquí podrás ver el video instructivo relacionado con esta práctica.</p>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="prac3.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="prac3_part2.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+  <!-- Add more videos here in the same way -->
+  
+</div>
+
+<!-- 3D Model Section -->
+<!-- 3D Model Section -->
+<div id="3D Modelo" class="content">
+    <h3>3D Modelo</h3>
+    <p>Aquí explorarás y comprenderás cada diagrama visualizándolo en 3D.</p>
+
+    <h3>1. Molécula de H2O</h3>
+    <model-viewer src="h2o_molecule.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+</div>
+<!---Questionaire--->
+
+<ol>
+
+    <script>
+        function openTab(tabId) {
+            // Hide all content
+            var contents = document.querySelectorAll(".content");
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll(".tab-button");
+            buttons.forEach(button => button.classList.remove("active"));
+
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add("active");
+
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+
+            // Ensure practical content is fully visible
+            document.getElementById("practical-content").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    </script>
+
+<footer>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centers buttons horizontally */
+            gap: 15px; /* Adds spacing between buttons */
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .styled-button {
+            padding: 8px 16px; /* Adjusted padding to make buttons smaller */
+            background-color: #E40D5E;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .styled-button:hover {
+            background-color: #b00a48; /* Slightly darker red on hover */
+            transform: scale(1.05); /* Slightly enlarges on hover */
+        }
+        </style>
+
+<div class="button-container">
+                    <button class="styled-button" onclick="window.location.href='Bio_Prac_4.php'">Próxima práctica</button>
+                    <button class="styled-button" onclick="window.location.href='Bio_Prac_2.php'">Práctica anterior</button>
+                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                </div>
+</footer>
+
+</body>
+</html>

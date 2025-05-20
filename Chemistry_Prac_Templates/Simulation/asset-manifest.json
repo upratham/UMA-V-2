@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/V2/V2/Chemistry_Prac_Templates/Simulation/static/css/main.ef317c35.css",
+    "main.js": "/V2/V2/Chemistry_Prac_Templates/Simulation/static/js/main.423d1517.js",
+    "index.html": "/V2/V2/Chemistry_Prac_Templates/Simulation/index.html",
+    "main.ef317c35.css.map": "/V2/V2/Chemistry_Prac_Templates/Simulation/static/css/main.ef317c35.css.map",
+    "main.423d1517.js.map": "/V2/V2/Chemistry_Prac_Templates/Simulation/static/js/main.423d1517.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef317c35.css",
+    "static/js/main.423d1517.js"
+  ]
+}

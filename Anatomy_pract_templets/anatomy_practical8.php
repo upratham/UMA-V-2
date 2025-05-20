@@ -1,186 +1,200 @@
 <?php
-include '../header.php';
-$practical_number = "A8"
+include('../header.php');
+$practical_number = "A8";
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script> 
+
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica 8 :ESTRUCTURAS QUE FORMAN LA CABEZA ÓSEA Y TODAS 
-        LAS ESTRUCTURAS BLANDAS QUE LO CUBREN</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex; /* Changes display to flex to help with the layout */
-            flex-direction: column; /* Stack elements vertically */
-        }
+    <title>Simulador UMA</title>
+        <style>
 
-        .practical-header {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-        }
+/* General Styles */
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #f9f9f9;
+    }
 
-        .container {
+    /* Tabs Navigation */
+    .tabs {
             display: flex;
-            flex-direction: row;
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            min-height: 100vh;
-        }
-
-        /* Sidebar (Shortcuts/Contents) */
-        .sidebar {
-            width: 20%;
-            background-color: #f4f4f4;
-            position: fixed;
-            top: 1; /* Sticks at the top of the viewport */
-            align-self: flex-start; /* Ensures sidebar stays at the top when scrolling */
-            overflow-y: auto; 
-            padding: 10px;
-            height: 100vh;
-            float:left;
-        }
-        .sidebar a {
-            text-decoration: none; 
-            color: #333;
-            display: block;
-            margin: 10px 0;
-        }
-        .sidebar a:hover {
-            background-color: #ddd;
-            padding-left: 10px;
-        }
-
-        .sidebar h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-        .sidebar ul li a:hover {
-            color: #007BFF;
-        }
-
-        /* Main Content Section */
-        #practical-content {
-            flex-grow: 1;
-            flex: 1; /* Takes the remaining space */
-            padding: 20px;
-            overflow-y: auto; /* Allows the main content to scroll */
-            display: inline-block;
-            margin-left: 280px;
-            margin-right: 50px;
-        }
-
-        h1 {
-            font-size: 24px;
-            text-align: center
-        }
-
-        h2 {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        /* Images styling */
-        .image-container {
-            text-align: center;
-        }
-
-        .anatomical-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-        }
-        .practical-header {
+            justify-content: center;
+            gap: 7px;
+            padding: 8px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
             position: sticky;
             top: 0;
-            background-color: white; /* Ensures the logo background stays clean when sticky */
-            z-index: 100; /* Ensures it stays above the rest of the content */
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border to the header */}
-        
-            .styled-button {
-            padding: 12px 24px; /* Larger padding for a bigger button */
-            background-color: #E40D5E;
-            color: white;
-            border: black;
-            border-radius: 8px; /* Larger border radius for a smoother look */
-            cursor: pointer;
-            font-size: 18px; /* Larger font size */
-            transition: background-color 0.3s ease;
-            margin-left: 20px; /* Adds space between the text and the button */
-            justify-content: center; /* Centers both the text and the button */
-            align-items: center;
-            display: flex;
-            width: 80%;
+            z-index: 900;
         }
 
-        .styled-button:hover {
-        background-color: #0e0d07; /* Darker color on hover */
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+    .tab-button {
+        padding: 12px 18px;
+        border: none;
+        background-color: #e0e0e0;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 
+    .tab-button.active {
+        background-color: #C31654;
+        color: white;
+        font-weight: bold;
+    }
 
-    </style>
+    /* Main Layout */
+    .container {
+        display: flex;
+        flex-direction: row;
+        min-height: 100vh;
+    }
+
+    /* Sidebar (Table of Contents) */
+    .sidebar {
+        width: 20%;
+        background-color: white;
+        height: auto;
+        padding: 20px;
+        border-right: 2px solid #ddd;
+    }
+
+    .sidebar h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 6px 0;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+        color: #ff9800;
+        font-weight: bold;
+        padding-left: 8px;
+    }
+
+    /* Practical Content */
+    #practical-content {
+        flex: 1;
+        padding: 40px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ensure only one content section is visible */
+    .content {
+        display: none;
+    }
+
+    .content.active {
+        display: block;
+    }
+
+    /* Buttons */
+    .styled-button {
+        padding: 12px 24px;
+        background-color: #E40D5E;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    .styled-button:hover {
+        background-color: #0e0d07;
+    }
+
+    #Video {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .video-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+</style>
 </head>
+
 <body>
 
-    
-    <!-- End of Profile Section -->
-    <header class="practical-header">
-        <img src="../Images/logo_UMA.png" alt="UMA Logo" class="practical-logo">
-    </header>
+        <!-- Tab Navigation -->
+<div class="tabs">
+        <button class="tab-button active" onclick="openTab('Teoría')">
+        <img src="book - icon.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Teoría</button>
+
+        <button class="tab-button active" onclick="openTab('Video')">
+        <img src="logo video.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Video</button>
+
+        <button class="tab-button active" onclick="openTab('3D Modelo')">
+        <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        3D Modelo</button>
+
+        <!-- Cuestionario tab: now submits the form directly -->
+    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+    <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
+    <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
+        <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Cuestionario
+    </button>
+</form>
+</div>
+
 
     <div class="container">
-        <!-- Left side (Shortcuts/Headings) -->
+        <!-- Sidebar (Contents) -->
         <nav class="sidebar">
             <h3>Encantado</h3>
             <ul>
@@ -194,16 +208,14 @@ $practical_number = "A8"
                 <li><a href="#Músculo depresor del labio inferior">Músculo depresor del labio inferior</a></li>
                 <li><a href="#Músculo mentoniano">Músculo mentoniano</a></li>
                 <li><a href="#Músculo cigomático menor">Músculo cigomático menor</a></li>
-                <li><a href="#Cuestionario">Cuestionario</a></li>
-
-
-
-            </ul>
+                </ul>
         </nav>
 
-        <!-- Right side (Main Content) -->
-        <section id="practical-content">
-            <div class="content">
+
+<!-- Main Content Section -->
+<section id="practical-content">
+    <!-- Theory Section -->
+    <div id="Teoría" class="content active">
                 <h1>PRÁCTICA N° 8:<br>ESTRUCTURAS QUE FORMAN LA CABEZA ÓSEA Y TODAS 
                     LAS ESTRUCTURAS BLANDAS QUE LO CUBREN</h1><br>
                 
@@ -729,22 +741,119 @@ $practical_number = "A8"
                 <div class="image-container">
                     <img src="Anatomy images\Practical 8\13.jpg" alt="13" class="13" width="600">
                 </div><br><br>
-
-                <h4 id="Cuestionario">Cuestionario</h4>
-                
-                <div>
-                    <form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
-                </div><br><br>
     
                 <h2 id="Reference">Referencia</h2>
                 <p>Fuente: <a href="https://www.kenhub.com/es/library/anatomia-es/terminologia-anatomica-es"> Kenhub - Anatomical Terminology</a></p>
                 
-            </div>
-        </section>
-    </div>
+            
+</div>
+      <!-- Video Section -->
+<div id="Video" class="content">
+  <h3 class="video-title">Video</h3>
+  <p class="video-description">Aquí podrás ver el video instructivo relacionado con esta práctica.</p>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="prac8.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <br>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="prac8_part2.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <br>
+
+</div>
+
+<div id="3D Modelo" class="content">
+    <h3>3D Modelo</h3>
+
+    <h3>1. Boca detallada</h3>
+    <model-viewer src="prac8.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+
+    <h3>2. Cráneo y cuello humanos</h3>
+    <model-viewer src="human_skull_and_neck.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+
+
+</div>
+
+<!---Questionaire--->
+
+    <script>
+        function openTab(tabId) {
+            // Hide all content
+            var contents = document.querySelectorAll(".content");
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll(".tab-button");
+            buttons.forEach(button => button.classList.remove("active"));
+
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add("active");
+
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+
+            // Ensure practical content is fully visible
+            document.getElementById("practical-content").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    </script>
+
+<footer>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centers buttons horizontally */
+            gap: 15px; /* Adds spacing between buttons */
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .styled-button {
+            padding: 8px 16px; /* Adjusted padding to make buttons smaller */
+            background-color: #E40D5E;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .styled-button:hover {
+            background-color: #b00a48; /* Slightly darker red on hover */
+            transform: scale(1.05); /* Slightly enlarges on hover */
+        }
+        </style>
+
+<div class="button-container">
+    <button class="styled-button" onclick="window.location.href='anatomy_practical9.php'">Próxima práctical</button>
+    <button class="styled-button" onclick="window.location.href='anatomy_practical7.php'">Práctica anterior</button>
+    <button class="styled-button" onclick="window.location.href='../anatomia/Anatomia.html'">Página principal</button>
+</div>
+</footer>
+
 </body>
 </html>

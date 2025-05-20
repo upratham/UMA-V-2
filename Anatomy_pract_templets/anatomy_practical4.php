@@ -1,217 +1,216 @@
 <?php
-include '../header.php';
-$practical_number = "A4"
+include('../header.php');
+$practical_number = "A4";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script> 
+
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Anatomy Practical 4</title>
+    <title>Simulador UMA</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        h1 {
-            text-align: center;
-            margin-top: 50px;
-        }
 
-        ol {
-            list-style-type: decimal;
-            font-weight: bold;
-        }
-
-        ol li {
-            font-weight: normal;
-        }
-
-        ol li::marker {
-            font-weight: bold;
-        }
-         /* Images styling */
-         .image-container {
-            text-align: left;
-        }
-
-        .anatomical-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-        }
-        .image-container {
-            text-align: center;
-            max-width: 100%;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Sticky header for UMA logo */
-        .practical-logo {
-            position: sticky;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            width: 150px;
-        }
-        section {
-            margin: 20px;
-        }
-        body {
-            font-family: Arial, sans-serif; /* Update this if the PHP file specifies a custom font */
+    /* General Styles */
+    body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* Background color, customizable */
-            color: #333;
-        }
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background-color: #f4f4f4;
-            color: #fff;
-            height: 100vh;
-            overflow-y: auto;
-            position: fixed;
-            padding: 15px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
+            height: 100%;
+            background-color: #f9f9f9;
         }
 
-        .sidebar ul li {
+        /* Tabs Navigation */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            padding: 8px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+        }
+
+        .tab-button {
+            padding: 12px 18px;
+            border: none;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-button.active {
+            background-color: #C31654;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Main Layout */
+        .container {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+        }
+
+        /* Sidebar (Table of Contents) */
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            height: auto;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+        }
+
+        .sidebar h3 {
             margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
         }
 
         .sidebar ul li a {
             text-decoration: none;
             color: #333;
-        }
-
-
-        .sidebar h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #000000;
-        }
-
-
-        .sidebar a {
-            color: #000000;
-            text-decoration: none;
             display: block;
-            margin: 8px 0;
+            padding: 6px 0;
             font-size: 14px;
-        }
-        .sidebar a:hover {
-            color: #6462dc;
+            transition: all 0.3s ease;
         }
 
-        /* Main Content */
+        .sidebar ul li a:hover {
+            color: #ff9800;
+            font-weight: bold;
+            padding-left: 8px;
+        }
+
+        /* Practical Content */
+        #practical-content {
+            flex: 1;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ensure only one content section is visible */
         .content {
-            margin-left: 270px;
-            padding: 20px;
+            display: none;
         }
 
-
-        .content h1 {
-            font-size: 22px;
-            margin-top: 20px;
+        .content.active {
+            display: block;
         }
 
-        .content p, .content ul {
-            line-height: 1.6;
-        }
-
-        .content ul {
-            padding-left: 20px;
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .content section {
-            margin-bottom: 30px;
-        }
-        .practical-header {
-            position: sticky;
-            top: 0;
-            background-color: white; /* Ensures the logo background stays clean when sticky */
-            z-index: 100; /* Ensures it stays above the rest of the content */
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border to the header */}
-        
-            .styled-button {
-            padding: 12px 24px; /* Larger padding for a bigger button */
+        /* Buttons */
+        .styled-button {
+            padding: 12px 24px;
             background-color: #E40D5E;
             color: white;
-            border: black;
-            border-radius: 8px; /* Larger border radius for a smoother look */
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 18px; /* Larger font size */
+            font-size: 18px;
             transition: background-color 0.3s ease;
-            margin-left: 20px; /* Adds space between the text and the button */
-            justify-content: center; /* Centers both the text and the button */
-            align-items: center;
+            margin-left: 20px;
             display: flex;
+            justify-content: center;
+            align-items: center;
             width: 80%;
         }
 
         .styled-button:hover {
-        background-color: #0e0d07; /* Darker color on hover */
-        }
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fffaf0;
-        }
-        .table-container {
-            text-align: center;
-            margin-left:2.5cm;
-            margin-right: 2.5cm;
+            background-color: #0e0d07;
         }
 
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+        #Video {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
+  .video-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
 
-        th {
-            background-color: #f4f4f4;
-        }
+  .video-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
     </style>
-   
 </head>
-<body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Contenido   </h2>
-        <a href="#OBJETIVOS">Objetivos</a>
-        <a href="#Sistema Digestivo">Sistema Digestivo</a>
-        <a href="#Glándulas anexas">Glándulas anexas</a>
-        <a href="#Cuestionario">Cuestionario</a>
-        <a href="#SISTEMA URINARIO OBJETIVOS">Sistema Urinario Objetivos</a>
-        
-    </div>
 
-    <!-- Main Content -->
-    <div class="content">
-        <header class="practical-header">
-            <img src="../Images/logo_UMA.png" alt="UMA Logo" class="practical-logo" >
-        </header>
-        <section id="OBJETIVOS">
+<body>
+
+      <!-- Tab Navigation -->
+<div class="tabs">
+        <button class="tab-button active" onclick="openTab('Teoría')">
+        <img src="book - icon.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Teoría</button>
+
+        <button class="tab-button active" onclick="openTab('Video')">
+        <img src="logo video.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Video</button>
+
+        <button class="tab-button active" onclick="openTab('3D Modelo')">
+        <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        3D Modelo</button>
+
+        <!-- Cuestionario tab: now submits the form directly -->
+    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+    <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
+    <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
+        <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Cuestionario
+    </button>
+</form>
+</div>
+
+
+    <div class="container">
+        <!-- Sidebar (Contents) -->
+        <nav class="sidebar">
+        <!-- Sidebar title -->
+        <h2>Contenido</h2>
+        <div class="overview-link">
+        <ul>
+        <li><a href="#practical-content">Objetivos</a></li> 
+        <li><a href="#cardiovascular-system">Sistema cardiovascular</a></li>
+        <li><a href="#respiratory-system">Sistema respiratorio</a></li>
+        </ul>
+    </nav>
+
+   <!-- Main Content Section -->
+   <section id="practical-content">
+            <!-- Theory Section -->
+            <div id="Teoría" class="content active">
             <h1>PRÁCTICA N° 4: <br>ESTRUCTURAS DEL APARATO DIGESTIVO Y URINARIO</h1>
             <h3 id="objectives"><strong>1. OBJETIVOS</strong></h3>
             <ul>
@@ -463,17 +462,6 @@ $practical_number = "A4"
             <div class="image-container">
                 <img src="Anatomy images\Practical 4\6.jpg" alt="6" class="6-image" style="width: 600px;">
             </div>
-            <h2 id="Cuestionario">Cuestionario</h2>
-           
-                
-                <div>
-                    <form  action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
-                </div>
-        </section>
 
         <section id="SISTEMA URINARIO OBJETIVOS">
             <h1>SISTEMA URINARIO</h1>
@@ -502,13 +490,142 @@ $practical_number = "A4"
                 <img src="Anatomy images\Practical 4\10.jpg" alt="10" class="10-image" style="width: 600px;">
             </div>
 
-       
-            
-        </section>
 
-      
-                
-                
-    </div>
+</section>
+</div>
+
+<!-- Video Section -->
+<div id="Video" class="content">
+  <h3 class="video-title">Video</h3>
+  <p class="video-description">Aquí podrás ver el video instructivo relacionado con esta práctica.</p>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="Prac4.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <br>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="Prac4_part2.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <br>
+
+  <div class="video-container">
+    <video width="720" height="405" controls>
+      <source src="Prac4_part3.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+</div>
+
+<div id="3D Modelo" class="content">
+    <h3>3D Modelo</h3>
+
+    <h3>1. Estómago humano</h3>
+    <model-viewer src="realistic_human_stomach.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+
+    <h3>2. Páncreas humano</h3>
+    <model-viewer src="pancreas.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+
+    <h3>3. Riñón humano</h3>
+    <model-viewer src="kidney.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+
+    <h3>4. Sección transversal del riñón humano</h3>
+    <model-viewer src="kidney_cross-section.glb"
+    alt="3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="background-color: white; width: 100%; height: 600;">
+    </model-viewer>
+</div>
+
+<!---Questionaire--->
+
+    <script>
+        function openTab(tabId) {
+            // Hide all content
+            var contents = document.querySelectorAll(".content");
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll(".tab-button");
+            buttons.forEach(button => button.classList.remove("active"));
+
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add("active");
+
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+
+            // Ensure practical content is fully visible
+            document.getElementById("practical-content").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    </script>
+
+<footer>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centers buttons horizontally */
+            gap: 15px; /* Adds spacing between buttons */
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .styled-button {
+            padding: 8px 16px; /* Adjusted padding to make buttons smaller */
+            background-color: #E40D5E;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .styled-button:hover {
+            background-color: #b00a48; /* Slightly darker red on hover */
+            transform: scale(1.05); /* Slightly enlarges on hover */
+        }
+        </style>
+
+<div class="button-container">
+    <button class="styled-button" onclick="window.location.href='anatomy_practical5.php'">Próxima práctical</button>
+    <button class="styled-button" onclick="window.location.href='anatomy_practical3.php'">Práctica anterior</button>
+    <button class="styled-button" onclick="window.location.href='../anatomia/Anatomia.html'">Página principal</button>
+</div>
+</footer>
+
 </body>
 </html>

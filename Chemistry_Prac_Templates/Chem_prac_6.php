@@ -1,13 +1,12 @@
 <?php
-include '../header.php';
-$practical_number = "C6"
+include('../header.php');
+$practical_number = "B1";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
+<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script> 
 
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRÁCTICA N° 06: Reglas de seguridad en el laboratorio</title>
@@ -18,151 +17,135 @@ $practical_number = "C6"
             margin: 0;
             padding: 0;
             height: 100%;
-            display: flex; /* Changes display to flex to help with the layout */
-            flex-direction: column; /* Stack elements vertically */
+            background-color: #f9f9f9;
         }
 
-        .practical-header {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
+        /* Tabs Navigation */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
+        .tab-button {
+            padding: 12px 18px;
+            border: none;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-button.active {
+            background-color: #ff9800;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Main Layout */
         .container {
             display: flex;
             flex-direction: row;
-            margin: 0;
-            width: 100%;
-            height: 100%;
             min-height: 100vh;
         }
 
-        /* Sidebar (Shortcuts/Contents) */
+        /* Sidebar (Table of Contents) */
         .sidebar {
             width: 20%;
-            background-color: #f4f4f4;
-            position: sticky;
-            top: 0; /* Sticks at the top of the viewport */
-            align-self: flex-start; /* Ensures sidebar stays at the top when scrolling */
-            overflow-y: auto; 
-            padding: 10px;
-            height: 100vh;
-            float:left;
-        }
-        .sidebar a {
-            text-decoration: none; 
-            color: #333;
-            display: block;
-            margin: 10px 0;
-        }
-        .sidebar a:hover {
-            background-color: #ddd;
-            padding-left: 10px;
+            background-color: white;
+            height: auto;
+            padding: 20px;
+            border-right: 2px solid #ddd;
         }
 
         .sidebar h3 {
-            font-size: 18px;
             margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .sidebar ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
         }
 
         .sidebar ul li a {
             text-decoration: none;
             color: #333;
-            transition: color 0.3s;
+            display: block;
+            padding: 6px 0;
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
 
         .sidebar ul li a:hover {
-            color: #007BFF;
-        }
-
-        /* Main Content Section */
-        #practical-content {
-            flex-grow: 1;
-            flex: 1; /* Takes the remaining space */
-            padding: 20px;
-            overflow-y: auto; /* Allows the main content to scroll */
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        /* Images styling */
-        .image-container {
-            text-align: left;
-        }
-
-        .anatomical-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .label {
+            color: #ff9800;
             font-weight: bold;
-            margin-top: 10px;
+            padding-left: 8px;
+        }
+
+        /* Practical Content */
+        #practical-content {
+            flex: 1;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ensure only one content section is visible */
+        .content {
+            display: none;
+        }
+
+        .content.active {
             display: block;
         }
-        .practical-header {
-            position: sticky;
-            top: 0;
-            background-color: white; /* Ensures the logo background stays clean when sticky */
-            z-index: 100; /* Ensures it stays above the rest of the content */
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border to the header */}
-        
-            .styled-button {
-            padding: 12px 24px; /* Larger padding for a bigger button */
+
+        /* Buttons */
+        .styled-button {
+            padding: 12px 24px;
             background-color: #E40D5E;
             color: white;
-            border: black;
-            border-radius: 8px; /* Larger border radius for a smoother look */
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 18px; /* Larger font size */
+            font-size: 18px;
             transition: background-color 0.3s ease;
-            margin-left: 20px; /* Adds space between the text and the button */
-            justify-content: center; /* Centers both the text and the button */
-            align-items: center;
+            margin-left: 20px;
             display: flex;
+            justify-content: center;
+            align-items: center;
             width: 80%;
         }
 
         .styled-button:hover {
-        background-color: #0e0d07; /* Darker color on hover */
+            background-color: #0e0d07;
         }
-}
 
     </style>
 </head>
 <body>
-    <header class="practical-header">
-        <img src="../Images/logo_UMA.png" alt="UMA Logo" class="practical-logo">
-    </header>
+
+   <!-- Tab Navigation -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('theory')">Theory</button>
+        <button class="tab-button" onclick="openTab('video')">Video</button>
+        <button class="tab-button" onclick="openTab('3D Model')">3D Model</button>
+        <button class="tab-button" onclick="openTab('Questionaire')">Questionaire</button>
+    </div>
 
     <div class="container">
-        <!-- Left side (Shortcuts/Headings) -->
+        <!-- Sidebar (Contents) -->
         <nav class="sidebar">
-            <h3>Contenido</h3>
+        <h3>Contents</h3>
             <ul>
                 <li><a href="#OBJETIVOS">OBJETIVOS</a></li>
                 <li><a href="#FUNDAMENTO TEÓRICO">FUNDAMENTO TEÓRICO</a></li>
@@ -173,9 +156,10 @@ $practical_number = "C6"
             </ul>
         </nav>
 
-        <!-- Right side (Main Content) -->
+        <!-- Main Content Section -->
         <section id="practical-content">
-            <div class="content">
+            <!-- Theory Section -->
+            <div id="theory" class="content active">
                 <h1>            PRÁCTICA N° 06: FUNCIONES QUÍMICAS INORGÁNICAS</h1>
                 <a href='Simulation\chem_sim_6.php'       class="styled-button">Simulation</a>
                 <h2 id="OBJETIVOS">1. OBJETIVOS</h2>
@@ -359,13 +343,6 @@ $practical_number = "C6"
                     </tr>
                 </table>
 
-                <h2 id="CUESTIONARIO">5. CUESTIONARIO</h2>
-                <form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
-                <ol>
                     <p>
                     <li>¿Cuál es la diferencia entre compuestos inorgánicos y compuestos orgánicos? </li>
                     <li>Elabore una lista de elementos que existen como gases a temperatura ambiente. </li>
@@ -379,6 +356,95 @@ $practical_number = "C6"
                 
             </div>
         </section>
-    </div>
+        </div>
+
+<!-- Video Section -->
+<div id="video" class="content">
+<h3>Video</h3>
+<p>Here you can watch the instructional video related to this practical.</p>
+<iframe width="560" height="315" src="https://youtu.be/VRWRmIEHr3A?si=16J5GDojr4B01JD1" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- Simulator Section -->
+<div id="Simulation" class="content">
+<h3>Simulation</h3>
+<p>Here you can try your experiment and learn about practicals.</p>
+
+<!-- Button to open the simulation in a new window -->
+<button onclick="openSimulation()" class="simulation-btn">Open Simulation</button>
+</div>
+
+<!---Questionaire--->
+<div id="Questionaire" class="content">
+<h3>Questionaire</h3>
+<form action="../questionnaire.php" method="GET">
+                        <!-- Pass the practical number as a GET parameter -->
+                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
+                        <button type="submit" class="styled-button">Ir al cuestionario</button>
+</form>
+<ol>
+</div>
+
+<script>
+// Function to open the simulation in a new window
+function openSimulation() {
+    window.open('https://chemitry-experiments-simulation.vercel.app/experiment3', '_blank');
+}
+</script>
+
+<script>
+    function openTab(tabId) {
+        // Hide all content
+        var contents = document.querySelectorAll(".content");
+        contents.forEach(content => content.classList.remove("active"));
+
+        // Remove active class from all buttons
+        var buttons = document.querySelectorAll(".tab-button");
+        buttons.forEach(button => button.classList.remove("active"));
+
+        // Show the selected tab content
+        document.getElementById(tabId).classList.add("active");
+
+        // Add active class to clicked button
+        event.currentTarget.classList.add("active");
+
+        // Ensure practical content is fully visible
+        document.getElementById("practical-content").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+</script>
+
+<footer>
+<style>
+    .button-container {
+        display: flex;
+        justify-content: center; /* Centers buttons horizontally */
+        gap: 15px; /* Adds spacing between buttons */
+        margin: 20px 0;
+        padding: 10px;
+    }
+
+    .styled-button {
+        padding: 8px 16px; /* Adjusted padding to make buttons smaller */
+        background-color: #E40D5E;
+        color: white;
+        border: none;
+        border-radius: 5px; /* Slightly rounded corners */
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .styled-button:hover {
+        background-color: #b00a48; /* Slightly darker red on hover */
+        transform: scale(1.05); /* Slightly enlarges on hover */
+    }
+</style>
+
+<div class="button-container">
+    <button class="styled-button" onclick="window.location.href='../chemistry/Química.html'">Home</button>
+    <button class="styled-button" onclick="window.location.href='Chem_prac_2.php'">Next Practical</button>
+</div>
+</footer>
+
 </body>
 </html>
