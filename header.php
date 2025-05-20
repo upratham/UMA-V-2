@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
-    header("Location: index.html");
-    exit();
-}
-?>
-
 <!-- Profile Section with Styling -->
 <style>
     .user-profile {
@@ -83,15 +75,13 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
 
 <!-- User Profile Section -->
 <div class="user-profile">
-    <div class="user-name">Hola, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></div>
+    
     <div class="dropdown">
         <span>perfil ▼</span>
         <div class="dropdown-content">
             <a href="#" onclick="openModal('changePasswordModal')"> Cambiar la contraseña</a>
             <a href="../logout.php">cerrar sesión</a>
-            <?php if ($_SESSION['role'] === 'director'): ?>
-                <a href="#" onclick="openModal('addStudentModal')"> Agregar estudiante</a>
-            <?php endif; ?>
+            
         </div>
     </div>
 </div>
