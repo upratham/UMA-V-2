@@ -2,18 +2,15 @@
  session_start();
  include 'dbconnect.php';
 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-
-
     // Database connection settings
-    // $sname = "localhost";
-    // $uname = "root";
-    // $db_password = "Captain@56";
-    // $db_name = "virtual_lab_sim";
+
 
     // Create a connection using the provided settings
     //$conn = mysqli_connect($sname, $uname, $db_password, $db_name, 3307);
@@ -61,9 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect to the appropriate homepage based on role
             if ($role === 'director') {
-                header("Location:  homepage_d.php");
+                header("Location: homepage_d.php");
             } else {
-                header("Location:  homepage/homepage.html");
+                header("Location: homepage.php");
             }
             exit();
         } else {
