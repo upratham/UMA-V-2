@@ -1,3 +1,8 @@
+
+<?php
+include '../header.php';
+$practical_number = "B1";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script> 
