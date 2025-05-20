@@ -76,11 +76,11 @@
 <!-- User Profile Section -->
 <div class="user-profile">
     
-    <div class="dropdown">
+<!--     <div class="dropdown">
         <span>perfil ▼</span>
         <div class="dropdown-content">
             <a href="#" onclick="openModal('changePasswordModal')"> Cambiar la contraseña</a>
-            <a href="../logout.php">cerrar sesión</a>
+            <a href="../logout.php">cerrar sesión</a> -->
             
         </div>
     </div>
