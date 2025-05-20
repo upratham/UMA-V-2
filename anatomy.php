@@ -53,7 +53,16 @@
             display: block;
         }
     </style>
-
+    <div class="user-profile">
+    
+            <span>perfil ▼</span>
+            <div class="dropdown-content">
+                <a href="#" onclick="openModal('changePasswordModal')"> Cambiar la contraseña</a>
+                <a href="logout.php">cerrar sesión</a>
+               
+            </div>
+        </div>
+    </div>
 
 
     <!-- Logo in the upper left corner -->
