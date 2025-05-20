@@ -115,9 +115,7 @@
             <div class="dropdown-content">
                 <a href="#" onclick="openModal('changePasswordModal')"> Cambiar la contraseña</a>
                 <a href="logout.php">cerrar sesión</a>
-                <?php if ($_SESSION['role'] === 'director'): ?>
-                    <a href="#" onclick="openModal('addStudentModal')">Agregar estudiante</a>
-                <?php endif; ?>
+                
             </div>
         </div>
     </div>
