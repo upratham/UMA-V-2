@@ -174,7 +174,7 @@ $practical_number = "C10"
         <section id="practical-content">
             <div class="content">
                 <h1>            PRÁCTICA N° 10 y 11: ESTEQUIOMETRÍA</h1>
-                <a href='Simulation/chem_sim_10.php'     class="styled-button">Simulation</a>
+                
                 <h2 id="OBJECTIVOS">1. OBJECTIVOS</h2>
                 <ul>
                     <li>Determinar la especie química que actúa como reactivo limitante en una reacción química de precipitación.</li>
