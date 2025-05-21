@@ -161,7 +161,7 @@ $practical_number = "B1";
             <!-- Theory Section -->
             <div id="theory" class="content active">
                 <h1>            PRÁCTICA N° 06: FUNCIONES QUÍMICAS INORGÁNICAS</h1>
-                <a href='Simulation\chem_sim_6.php'       class="styled-button">Simulation</a>
+        
                 <h2 id="OBJETIVOS">1. OBJETIVOS</h2>
                 <ul>
                     <li>•	Identificar propiedades importantes de algunos elementos de la tabla periódica.</li>
