@@ -1,8 +1,6 @@
 <?php
 // Ensure nothing is sent before headers
-declare(strict_types=1);
-ob_start(); // start output buffering
-session_start();
+
 
 include('../header.php');
 $practical_number = "A1";
