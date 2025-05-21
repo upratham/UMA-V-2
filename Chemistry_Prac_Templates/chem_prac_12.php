@@ -156,7 +156,7 @@ $practical_number = "C12"
 </head>
 <body>
     <header class="practical-header">
-        <img src="../Images/logo_UMA.png" alt="UMA Logo" class="practical-logo">
+        <img src="../Images/logo_UMA.png"  class="practical-logo">
     </header>
 
     <div class="container">
