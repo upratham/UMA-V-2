@@ -179,7 +179,7 @@ $practical_number = "C7"
         <section id="practical-content">
             <div class="content">
                 <h1>            PRÁCTICA N° 07 y 08: NOMENCLATURA INORGÁNICA</h1>
-                <a href='Simulation\chem_sim_7_8.php'       class="styled-button">Simulation</a>
+
                 
                 <h2 id="Resultados de aprendizaje">1. Resultados de aprendizaje</h2>
                 <h3>Resultados de aprendizaje</h3>
