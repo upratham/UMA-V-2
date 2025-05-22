@@ -213,7 +213,7 @@ $practical_number = "C9"
             <!-- Theory Section -->
             <div id="Teoría" class="content active">
                 <h1>            PRÁCTICA N° 09: REACCIONES QUÍMICAS</h1>
-                <a href='Simulation\chem_sim_9.php'       class="styled-button">Simulation</a>
+             
                 <h2 id="OBJETIVOS">1. OBJETIVOS</h2>
                 <ul>
                     <li>1.1 Reconocer experimentalmente diferentes tipos de reacciones químicas.</li>
