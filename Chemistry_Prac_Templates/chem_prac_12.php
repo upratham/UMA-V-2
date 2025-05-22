@@ -214,7 +214,7 @@ $practical_number = "C12"
             <!-- Theory Section -->
             <div id="Teoría" class="content active">
                 <h1> PRÁCTICA N° 12: SOLUCIONES FÍSICAS Y QUÍMICAS</h1>
-                <a href='Simulation/chem_sim_12.php'       class="styled-button">Simulation</a>
+                
                 <h2 id="OBJETIVOS">I. OBJETIVOS</h2>
                 <ul>
                     <li>Efectuar cálculos para la preparación de  soluciones de una concentración determinada.</li>
