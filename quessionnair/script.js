@@ -19,7 +19,7 @@ let quizReady = false;
 // Fetch questions from backend
 async function fetchQuestions() {
   try {
-    const res = await fetch("http://localhost/quessionnair/get_questions.php");
+    const res = await fetch("https://uma-old-front.onrender.com/quessionnair/get_questions.php");
     quizArray = await res.json();
     quizReady = quizArray.length > 0;
   } catch (err) {
