@@ -178,7 +178,7 @@ $practical_number = "B2";
         Video</button>
 
         <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -194,9 +194,9 @@ $practical_number = "B2";
             <ul>
                 <li><a href="COMPETENCIAS">COMPETENCIAS</a></li>
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
-                <li><a href="#Pilares del método científico">Pilares del método científico</a></li>
-                <li><a href="#Características del método científico">Características del método científico</a></li>
-                <li><a href="#Pasos del método científico">Pasos del método científico</a></li>
+                <li><a href="#PILARES DEL METEDO CIENTIFICO">Pilares del método científico</a></li>
+                <li><a href="#CARATERISTICAS DEL METEDO CIENTIFICO">Características del método científico</a></li>
+                <li><a href="#PASOS DEL METEDO CIENTIFICO">Pasos del método científico</a></li>
                 <li><a href="#MATERIALES Y MÉTODOS">MATERIALES Y MÉTODOS</a></li>
                 <li><a href="#RESULTADOS">RESULTADOS</a></li>
                 <li><a href="#DISCUSIONES">DISCUSIONES</a></li>
@@ -222,7 +222,7 @@ $practical_number = "B2";
                 <p>El método científico es el proceso sistematizado que emplea la ciencia para generar un conocimiento científico. Implica una metodología, el diseño de técnicas de ensayo y verificación aceptadas por la comunidad científica como válidas, con el objetivo de obtener nuevos conocimientos</p>
                 <p>En el método científico, si bien se inicia con la observación que será el origen de la pregunta, es solo a través de un proceso sistematizado u ordenado que se intentará dar respuesta para proponer una hipótesis que luego se deberá comprobar a través de la experimentación. Muchos de los descubrimientos que hoy conocemos partieron de una hipótesis que fue comprobada a través de este método.</p>
 
-                <h3 id="Pilares del método científico">2.1	Pilares del método científico </h3>
+                <h3 id="PILARES DEL METEDO CIENTIFICO">2.1	Pilares del método científico </h3>
                 <p><strong>El método científico está sustentado por dos pilares fundamentales:</strong></p>
                 <ul>
                     <li>Reproducibilidad: implica la capacidad de repetir un determinado experimento las veces que sea necesario en cualquier lugar y por cualquier persona y los resultados deben ser constantes.</li>
@@ -230,7 +230,7 @@ $practical_number = "B2";
                     
                 </ul>
 
-                <h3 id="Características del método científico">2.2	Características del método científico</h3>
+                <h3 id="CARATERISTICAS DEL METEDO CIENTIFICO">2.2	Características del método científico</h3>
                 <ul>
                     <li>Sistemático, es decir, es riguroso. El investigador debe seguir el orden de todos los pasos del método, sin alterar ninguno de ellos.</li>
                     <li>Objetivo. Se basa en hechos concretos y comprobables, y no en deseos, creencias u opiniones. Es responsabilidad del científico u investigador mantener su visión subjetiva al margen de la investigación.</li>
@@ -240,7 +240,7 @@ $practical_number = "B2";
                     
                 </ul>
 
-                <h3 id="Pasos del método científico">2.3	Pasos del método científico</h3>
+                <h3 id="PASOS DEL METEDO CIENTIFICO">2.3	Pasos del método científico</h3>
                 <p>Consiste en seis pasos (Audesirk et al. 2008). La ciencia lo emplea para saber de forma objetiva cómo funciona el mundo que nos rodea. No nos garantiza una certeza absoluta, pero nos permite ir conociendo cada vez mejor el mundo.</p>
                 <ol>
                    <li><strong>Observacion: </strong>consiste en observar la realidad y mediante la actividad sensorial, el hombre se da cuenta de fenómenos que se le presentan. En este primer paso se observan y registran los fenómenos de la realidad. Es importante tener en cuenta hechos objetivos y dejar de lado opiniones subjetivas o personales.</li>
@@ -362,7 +362,7 @@ $practical_number = "B2";
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_3.php'">Próxima práctica</button>
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_1.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                    <a href="https://v2-38ue.onrender.com/biology/Biologia.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

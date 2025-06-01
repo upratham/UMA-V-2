@@ -4,8 +4,6 @@ $practical_number = "B1";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script> 
-
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +42,7 @@ $practical_number = "B1";
         }
 
         .tab-button.active {
-            background-color: #ff9800;
+            background-color: #C31654;
             color: white;
             font-weight: bold;
         }
@@ -130,17 +128,70 @@ $practical_number = "B1";
             background-color: #0e0d07;
         }
 
+        #Video {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .video-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  video {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
     </style>
 </head>
+
 <body>
 
-   <!-- Tab Navigation -->
-    <div class="tabs">
-        <button class="tab-button active" onclick="openTab('theory')">Theory</button>
-        <button class="tab-button" onclick="openTab('video')">Video</button>
-        <button class="tab-button" onclick="openTab('3D Model')">3D Model</button>
-        <button class="tab-button" onclick="openTab('Questionaire')">Questionaire</button>
-    </div>
+
+    <!-- Tab Navigation -->
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab('Teoría')">
+        <img src="book - icon.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Teoría
+    </button>
+
+    <button class="tab-button active" onclick="openTab('Video')">
+        <img src="logo video.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Video
+    </button>
+
+    <button class="tab-button active" onclick="openTab('Simulation')">
+        <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Simulation
+    </button>
+
+    <!-- Cuestionario tab: now submits the form directly -->
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
+    <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
+    <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
+        <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+        Cuestionario
+    </button>
+</form>
+</div>
 
     <div class="container">
         <!-- Sidebar (Contents) -->
@@ -159,7 +210,7 @@ $practical_number = "B1";
         <!-- Main Content Section -->
         <section id="practical-content">
             <!-- Theory Section -->
-            <div id="theory" class="content active">
+            <div id="Teoría" class="content active">
                 <h1>            PRÁCTICA N° 06: FUNCIONES QUÍMICAS INORGÁNICAS</h1>
         
                 <h2 id="OBJETIVOS">1. OBJETIVOS</h2>
@@ -353,10 +404,8 @@ $practical_number = "B1";
                     <li>Describa características físicas y químicas de los siguientes compuestos: CaCO3, CaO, Ca(OH)2, Fe, Fe2O3</li>
                 </p>
                 </ol>
-                
-            </div>
-        </section>
-        </div>
+            
+    </div>
 
 <!-- Video Section -->
 <div id="video" class="content">
@@ -374,23 +423,40 @@ $practical_number = "B1";
 <button onclick="openSimulation()" class="simulation-btn">Open Simulation</button>
 </div>
 
-<!---Questionaire--->
-<div id="Questionaire" class="content">
-<h3>Questionaire</h3>
-<form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-</form>
-<ol>
-</div>
-
 <script>
 // Function to open the simulation in a new window
 function openSimulation() {
-    window.open('https://chemitry-experiments-simulation.vercel.app/experiment3', '_blank');
+    window.open('https://chemitry-experiments-simulation.vercel.app/experiment4', '_blank');
 }
 </script>
+
+<!-- CSS Styling for the button -->
+<style>
+/* Styling the simulation button */
+.simulation-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add padding around text */
+    text-align: center; /* Center the text */
+    font-size: 16px; /* Larger font size */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Change background color on hover */
+.simulation-btn:hover {
+    background-color: #45a049; /* Slightly darker green */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Add a shadow effect when the button is clicked */
+.simulation-btn:active {
+    background-color: #3e8e41; /* Even darker green */
+    transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+</style>
 
 <script>
     function openTab(tabId) {
@@ -441,9 +507,10 @@ function openSimulation() {
 </style>
 
 <div class="button-container">
-    <button class="styled-button" onclick="window.location.href='../chemistry/Química.html'">Home</button>
-    <button class="styled-button" onclick="window.location.href='Chem_prac_2.php'">Next Practical</button>
-</div>
+                    <button class="styled-button" onclick="window.location.href='Chem_Prac_7.php'">Próxima práctica</button>
+                    <button class="styled-button" onclick="window.location.href='Chem_Prac_5.php'">Práctica anterior</button>
+                    <a href="https://v2-38ue.onrender.com/chemistry/Química.html" class="styled-button">Página principal</a>
+                </div>
 </footer>
 
 </body>

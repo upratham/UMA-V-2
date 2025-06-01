@@ -203,7 +203,7 @@ $practical_number = "A1";
         Video</button>
 
          <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+    <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -217,8 +217,8 @@ $practical_number = "A1";
         <nav class="sidebar">
         <h3>Contents</h3>
             <ul>
-            <li><a href="#objectives">Objetivos</a></li>
-                <li><a href="#position">Posición</a></li>
+            <li><a href="#objectives">OBJECTIVOS</a></li>
+                <li><a href="#position">POSICIONS</a></li>
                 <li><a href="#planes">Aviones</a></li>
                 <li><a href="#terms">Términos anatómicos</a></li>
                 <li><a href="#Movements">Movimientos</a></li>
@@ -441,7 +441,7 @@ $practical_number = "A1";
 
 <div class="button-container">
     <button class="styled-button" onclick="window.location.href='anatomy_practical2.php'">Próxima práctical</button>
-    <button class="styled-button" onclick="window.location.href='../anatomia/Anatomia.html'">Página principal</button>
+    <a href="https://v2-38ue.onrender.com/anatomia/Anatomia.html" class="styled-button">Página principal</a>
 </div>
 </footer>
 

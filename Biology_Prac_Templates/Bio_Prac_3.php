@@ -181,7 +181,7 @@ $practical_number = "B3";
         3D Modelo</button>
 
         <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+    <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -197,7 +197,7 @@ $practical_number = "B3";
             <ul>
                 <li><a href="COMPETENCIAS">COMPETENCIAS</a></li>
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
-                <li><a href="#Las biomoléculas">Las biomoléculas</a></li>
+                <li><a href="#LAS BIOMOLECULAS">Las biomoléculas</a></li>
                 <li><a href="#MATERIALES Y MÉTODOS">MATERIALES Y MÉTODOS</a></li>
                 <li><a href="#TUBOS CONTROLES">TUBOS CONTROLES</a></li>
                 <li><a href="#MATERIALES DE LABORATORIO">MATERIALES DE LABORATORIO</a></li>
@@ -242,7 +242,7 @@ $practical_number = "B3";
                     <img src="Photos\Biology Diagrams\Prac 3\2.jpg" alt="Fowler position" lass="center" style="width: 500px; height: 300px;">
                 </div>
 
-                <h3 id="Las biomoléculas">2.2	Las biomoléculas </h3>
+                <h3 id="LAS BIOMOLECULAS">2.2	Las biomoléculas </h3>
                 <p>Una molécula es un conjunto de átomos (de un mismo elemento químico o diferentes) que están organizados e interrelacionados mediante enlaces químicos. Y si estos elementos (átomos) forman parte de los seres vivos entonces su unión dará lugar a las biomoléculas. Las biomoléculas se encuentran presentes en los seres vivos formando parte de sus células y permitiendo el adecuado funcionamiento de ellas.</p>
                 <div class="image-container">
                     <img src="Photos\Biology Diagrams\Prac 3\3.jpg" alt="Fowler position" lass="center" style="width: 500px; height: 300px;">
@@ -777,7 +777,7 @@ $practical_number = "B3";
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_4.php'">Próxima práctica</button>
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_2.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                   <a href="https://v2-38ue.onrender.com/biology/Biologia.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

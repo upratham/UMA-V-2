@@ -177,7 +177,7 @@ $practical_number = "B12";
         Video</button>
 
         <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -194,8 +194,7 @@ $practical_number = "B12";
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
                 <li><a href="#COMPETENCIAS">COMPETENCIAS</a></li>
                 <li><a href="#PROCEDIMIENTO">PROCEDIMIENTO</a></li>
-                <li><a href="#Sopa de fases">Sopa de fases</a></li>
-                <li><a href="#CUESTIONARIO">CUESTIONARIO</a>
+                <li><a href="#SOPA DE FASES">Sopa de fases</a></li>
                 <li><a href="#REFERENCIAS BIBLIOGRÁFICAS">REFERENCIAS BIBLIOGRÁFICAS</a></li>
             </ul>
         </nav>
@@ -323,7 +322,7 @@ $practical_number = "B12";
             </table>
             <p style="text-align: right;">(Imágenes: Laboratorio de Biología. Universidad).</p>
 
-            <h2 id = "Sopa de fases">Sopa de fases</h2>
+            <h2 id = "SOPA DE FASES">Sopa de fases</h2>
     <p>En los microscopios del laboratorio se colocarán las diferentes fases de la meiosis de forma aleatoria, cada lámina presenta una letra. A continuación, observar al microscopio, reconocer la fase y colocar la letra en la fase que corresponda en la lista líneas abajo.</p>
     <ul style="list-style-type: none; padding: 0; margin-left: 20px;">
         <li><b>Profase I:</b> ______________________</li>
@@ -530,7 +529,7 @@ $practical_number = "B12";
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_13.php'">Próxima práctica</button>
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_11.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                    <a href="https://v2-38ue.onrender.com/biology/Biologia.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

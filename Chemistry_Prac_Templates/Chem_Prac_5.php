@@ -184,14 +184,14 @@ $practical_number = "B1";
     </button>
 
     <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
         Cuestionario
     </button>
 </form>
-    </div>
+</div>
 
 
     <div class="container">
@@ -199,12 +199,12 @@ $practical_number = "B1";
         <nav class="sidebar">
         <h3>Contents</h3>
             <ul>
-                <li><a href="#Objetivos">Objetivos</a></li>
-                <li><a href="#Marco Teórico">Marco Teórico</a></li>
+                <li><a href="#Objetivos">OBJETIVOS</a></li>
+                <li><a href="#Marco Teórico">MARCO TEORICO</a></li>
                 <li><a href="#PARTE EXPERIMENTAL">PARTE EXPERIMENTAL</a></li>
                 <li><a href="#RESULTADOS Y CONCLUSIONES">RESULTADOS Y CONCLUSIONES</a></li>
-                <li><a href="#Cuestionario">Cuestionario</a></li>
-                <li><a href="#Referencia">Referencia</a></li>
+                <li><a href="#Cuestionario">CUESTIONARIO</a></li>
+                <li><a href="#Referencia">REFERENCIA</a></li>
 
             </ul>
         </nav>
@@ -384,14 +384,6 @@ $practical_number = "B1";
                 <li>En una capsula colocar unas gotas de acetona y acercar un cerillo encendido. Observar.</li>
 
                 <h2 id="RESULTADOS Y CONCLUSIONES"> RESULTADOS Y CONCLUSIONES</h2>
-
-                <h2 id="Cuestionario">5. Cuestionario</h2>
-                <form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
-                <
     
                 <h2 id="Referencia">Referencia</h2>
             </div>
@@ -411,18 +403,6 @@ $practical_number = "B1";
 
 <!-- Button to open the simulation in a new window -->
 <button onclick="openSimulation()" class="simulation-btn">Open Simulation</button>
-</div>
-
-<!---Questionaire--->
-<div id="Questionaire" class="content">
-    <h3>Questionaire</h3>
-    <form action="../questionnaire.php" method="GET">
-    <!-- Pass the practical number as a GET parameter -->
-    <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-    <button type="submit" class="styled-button">Ir al cuestionario</button>
-    </form>
-                
-<ol>
 </div>
 
 <script>
@@ -510,8 +490,8 @@ function openSimulation() {
 
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Chem_Prac_6.php'">Próxima práctica</button>
-                    <button class="styled-button" onclick="window.location.href='Chem_Prac_5.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../chemistry/Química.html'">Inicio</button>
+                    <button class="styled-button" onclick="window.location.href='Chem_Prac_4.php'">Práctica anterior</button>
+                    <a href="https://v2-38ue.onrender.com/chemistry/Química.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

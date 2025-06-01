@@ -186,7 +186,7 @@ $practical_number = "B10";
         3D Modelo</button>
 
         <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -201,10 +201,9 @@ $practical_number = "B10";
             <h3>Contents</h3>
             <ul>
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
-                <li><a href="#Procedimiento">Procedimiento</a></li>
+                <li><a href="#PROCEDIMIENTO">Procedimiento</a></li>
                 <li><a href="#RESULTADOS">RESULTADOS</a></li>
-                <li><a href="#CUESTIONARIO">CUESTIONARIO</a>
-                <li><a href="#Referencias">REFERENCIAS BIBLIOGRÁFICAS</a></li>
+                <li><a href="#REFERENCIAS">REFERENCIAS BIBLIOGRÁFICAS</a></li>
             </ul>
         </nav>
 
@@ -241,7 +240,7 @@ $practical_number = "B10";
                     La enzima Enolasa requiere para su activación la presencia de iones de magnesio. Si se desea inhibir dicha enzima, sería necesario un compuesto que secuestre el magnesio, como es el caso del fluoruro de sodio que reacciona con el magnesio formando fluoruro de magnesio. 
                     De esta forma, se bloquearía la formación del piruvato y por ende el proceso de respiración celular, esto se evidencia con la disminución en la producción de dióxido de carbono.
                 </p>
-                <h2 id = "Competencias">Competencias</h2>
+                <h2 id = "COMPETENCIAS">Competencias</h2>
                 <ol>
                     <li>Identifica los procesos de respiración celular.</li>
                     <li>Reconoce el efecto de un antimetabolito en el proceso de respiración celular.</li>
@@ -272,7 +271,7 @@ $practical_number = "B10";
                     <li>Plumón marcador para vidrio</li>
                 </ul>
 
-                <h3 id = "Procedimiento">Procedimiento</h3>
+                <h3 id = "PROCEDIMIENTO">Procedimiento</h3>
                 <ol>
                     <li>Rotular los tubos de ensayo grandes y pequeños, numerar del 1 al 5.</li>
                     <li>
@@ -393,15 +392,9 @@ $practical_number = "B10";
                 <div class="image-container">
                     <img src="Photos\Biology Diagrams\Prac 10\4.png" alt="Fowler position" class="center">
                 </div>
-                <h2 id="CUESTIONARIO">CUESTIONARIO</h2>
-                <div id="anatomy-buttons">
-                <form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
+                
                 <br>
-                <h2 id = "Referencias">Referencias Bibliográficas</h2>
+                <h2 id = "REFERENCIAS">Referencias Bibliográficas</h2>
     <ul>
         <li>
             Audesirk T., Audesirk G. & Byers B. (2008). <i>Biología: La vida en la tierra. 8va. Edición</i>. México: Pearson. Prentice-Hall Hispanoamericana S.A.
@@ -570,7 +563,7 @@ $practical_number = "B10";
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_11.php'">Próxima práctica</button>
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_9.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                    <a href="https://v2-38ue.onrender.com/biology/Biologia.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

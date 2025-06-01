@@ -181,7 +181,7 @@ $practical_number = "B11";
         3D Modelo</button>
 
         <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -189,18 +189,16 @@ $practical_number = "B11";
     </button>
 </form>
 </div>
-
     <div class="container">
         <!-- Sidebar (Contents) -->
         <nav class="sidebar">
             <h3>Contents</h3>
             <ul>
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
-                <li><a href="#División Celular">División Celular</a></li>
-                <li><a href="#Competencias">Competencias</a></li>
-                <li><a href="#Actividad">Actividad</a></li>
+                <li><a href="#DIVISION CELULAR">División Celular</a></li>
+                <li><a href="#COMPETENCIAS">Competencias</a></li>
+                <li><a href="#ACTIVIDAD">Actividad</a></li>
                 <li><a href="#RESULTADOS">RESULTADOS</a></li>
-                <li><a href="#CUESTIONARIO">CUESTIONARIO</a>
                 <li><a href="#REFERENCIAS BIBLIOGRÁFICAS">REFERENCIAS BIBLIOGRÁFICAS</a></li>
             </ul>
         </nav>
@@ -232,7 +230,7 @@ $practical_number = "B11";
         </li>
     </ol>
 
-    <h3 id = "División Celular">División Celular</h3>
+    <h3 id = "DIVISION CELULAR">División Celular</h3>
     <p>Se divide en 2 etapas:</p>
     <ol>
         <li>
@@ -297,7 +295,7 @@ $practical_number = "B11";
         Al término de la telofase se obtendrán dos nuevos núcleos, es por ello que debe continuarse con una citocinesis para poder obtener 2 células idénticas entre sí.
     </p>
 
-    <h2 id = "Competencias">Competencias</h2>
+    <h2 id = "COMPETENCIAS">Competencias</h2>
     <ul>
         <li>Identifica las fases de la mitosis en células meristemáticas de raíz de “cebolla”.</li>
     </ul>
@@ -312,7 +310,7 @@ $practical_number = "B11";
     <h2>Procedimiento</h2>
     <p>Observar a 400X las láminas preparadas de mitosis y esquematizar cada una de las fases.</p>
 
-    <h2 id = "Actividad">Actividad</h2>
+    <h2 id = "ACTIVIDAD">Actividad</h2>
     <p>
         A continuación, se presentan las fases de la mitosis y la citocinesis de una <b>CÉLULA ANIMAL</b> sin un orden determinado, a partir de estas deberá asignar el nombre de la fase a la que pertenece y completar la información de las estructuras solicitadas por las flechas.
     </p>
@@ -331,7 +329,7 @@ $practical_number = "B11";
     </div>
     <br>
 
-    <h2 id = "Resultados">Resultados</h2>
+    <h2 id = "RESULTADOS">Resultados</h2>
     <p>Tipo de muestra empleada para observar mitosis: __________________________</p>
     <table border="1" cellspacing="0" cellpadding="5" style="width: 100%; border-collapse: collapse;">
         <thead>
@@ -374,15 +372,8 @@ $practical_number = "B11";
             </tr>
         </tbody>
     </table>
-    <h2 id="CUESTIONARIO">CUESTIONARIO</h2>
-                <div id="anatomy-buttons">
-                <form action="../questionnaire.php" method="GET">
-                        <!-- Pass the practical number as a GET parameter -->
-                        <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
-                        <button type="submit" class="styled-button">Ir al cuestionario</button>
-                    </form>
 
-    <h2 id = "Referencias Bibliográficas">Referencias Bibliográficas</h2>
+    <h2 id = "REFERENCIAS BIBLIOGRÁFICAS">Referencias Bibliográficas</h2>
     <ul>
         <li>Audesirk T., Audesirk G. & Byers B. (2008). <i>Biología: La vida en la tierra. 8va. Edición</i>. México: Pearson. Prentice-Hall Hispanoamericana S.A.</li>
         <li>Solomon E., Berg L. & Martin D. (2013). <i>Biología. 9na. Edición</i>. México: Cengage Learning Editores S.A.</li>
@@ -613,7 +604,7 @@ $practical_number = "B11";
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_12.php'">Próxima práctica</button>
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_10.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                    <a href="https://v2-38ue.onrender.com/biology/Biologia.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

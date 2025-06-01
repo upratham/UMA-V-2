@@ -186,28 +186,28 @@ $practical_number = "C7"
     </button>
 
     <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
         Cuestionario
     </button>
 </form>
-    </div>
+</div>
 
     <div class="container">
         <!-- Sidebar (Contents) -->
         <nav class="sidebar">
         <h3>Contents</h3>
             <ul>
-                <li><a href="#Resultados de aprendizaje">Resultados de aprendizaje</a></li>
-                <li><a href="#Contenidos">Contenidos</a></li>
-                <li><a href="#Nomenclatura Básica">Nomenclatura Básica</a></li>
-                <li><a href="#Uso de nomenclatura sistemática">Uso de nomenclatura sistemática</a></li>
-                <li><a href="#Resultados">Resultados</a></li>
+                <li><a href="#Resultados de aprendizaje">RESULTADOS DE APRENDIZAJE</a></li>
+                <li><a href="#Contenidos">CONTENIDOS</a></li>
+                <li><a href="#Nomenclatura Básica">NOMENCLATURA BASICA</a></li>
+                <li><a href="#Uso de nomenclatura sistemática">USO DE NOMENCLATURA SISTEMATICA</a></li>
+                <li><a href="#Resultados">RESULTADOS</a></li>
                 <li><a href="#EJERCICIOS">EJERCICIOS</a></li>
-                <li><a href="#Cuestionario">Cuestionario</a></li>
-                <li><a href="#Referencia">Referencia</a></li>
+                <li><a href="#Cuestionario">CUESTIONARIO</a></li>
+                <li><a href="#Referencia">REFERENCIA</a></li>
             </ul>
         </nav>
 
@@ -1922,9 +1922,9 @@ function openSimulation() {
 </style>
 
 <div class="button-container">
-                    <button class="styled-button" onclick="window.location.href='Chem_Prac_5.php'">Próxima práctica</button>
-                    <button class="styled-button" onclick="window.location.href='Chem_Prac_4.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../chemistry/Química.html'">Inicio</button>
+                    <button class="styled-button" onclick="window.location.href='Chem_Prac_9.php'">Próxima práctica</button>
+                    <button class="styled-button" onclick="window.location.href='Chem_Prac_6.php'">Práctica anterior</button>
+                    <a href="https://v2-38ue.onrender.com/chemistry/Química.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

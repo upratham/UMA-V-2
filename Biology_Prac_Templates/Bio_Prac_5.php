@@ -181,7 +181,7 @@ $practical_number = "B5";
         3D Modelo</button>
 
         <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
@@ -196,8 +196,8 @@ $practical_number = "B5";
             <ul>
                 <li><a href="COMPETENCIAS">COMPETENCIAS</a></li>
                 <li><a href="#INTRODUCCIÓN">INTRODUCCIÓN</a></li>
-                <li><a href="#Célula procariota">Célula procariota</a></li>
-                <li><a href="#Célula Eucariota">Célula Eucariota</a></li>
+                <li><a href="#CELULA PROCARIOTA">Célula procariota</a></li>
+                <li><a href="#CELULA EUCARIOTA">Célula Eucariota</a></li>
                 <li><a href="#IMPORTANCIA DE LA CÉLULA Y CARACTERÍSTICAS">IMPORTANCIA DE LA CÉLULA Y CARACTERÍSTICAS</a></li>
                 <li><a href="#MATERIALES Y MÉTODOS">MATERIALES Y MÉTODOS</a></li>
                 <li><a href="#PROCEDIMIENTO">PROCEDIMIENTO</a></li>
@@ -222,13 +222,13 @@ $practical_number = "B5";
                 <p>Las células son las unidades básicas de todos los seres vivos, por tal razón, se le conoce como la unidad funcional y estructural. Al observarlas al microscopio, las células poseen diversas formas y tamaños y se presentan como corpúsculos hialinos o granulosos.</p>
                 <p>Estas unidades estructurales están limitadas periféricamente por la membrana plasmática y algunas poseen una capa extra llamada pared celular. En el interior de algunas, se pueden observar estructuras de formas y tamaños variados denominadas organelas y entre ellas una en particular llamada núcleo. Y de acuerdo a la presencia de ésta última, las células se dividen en dos tipos: Células procariotas y Células eucariotas.</p>
                 <br>
-                <h3 id="Célula procariota">2.1	Célula procariota</h3>
+                <h3 id="CELULA PROCARIOTA">2.1	Célula procariota</h3>
                 <div class="image-container">
                     <img src="Photos\Biology Diagrams\Prac 5\1.png" alt="Sunflower" style="float: left; margin-right: 15px; width: 300px; height: auto;">
                 </div>
                 <p>Las células procariotas presentan un ADN disperso porque carecen de un núcleo definido ya que no cuenta con membrana nuclear, usualmente miden entre 1μm a 7μm. La mayoría de las células procariotas están rodeadas completamente por una pared celular que está compuesta por peptidoglucano. Poseen diversas formas, siendo las más comunes las de cocos (redondo), bacilos (alargado), vibriones (coma) y espiraladas (espiral).</p>
 
-                <h3 id="Célula Eucariota">2.2	Célula Eucariota</h3>
+                <h3 id="CELULA EUCARIOTA">2.2	Célula Eucariota</h3>
                 <p>Las células eucariotas difieren de las células procariotas en cuanto a su estructura y complejidad, poseen un ADN dentro de un núcleo definido (rodeado por una membrana nuclear). También se caracterizan por presentar un tamaño promedio entre 10m a 100m y tener al interior de ellas una serie de organelas membranosas dedicadas a cumplir diferentes funciones. <br>
 
                     Estas células se clasifican en célula eucariota vegetal, animal, fúngica y protista. Aunque las formas más estudiadas son las dos primeras. Una de las principales diferencias entre las células eucariotas vegetales y animales es que la primera posee pared celular compuesta por celulosa.
@@ -601,7 +601,7 @@ En una lámina porta objeto colocar un fragmento de catafilo (epidermis) de cebo
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_6.php'">Próxima práctica</button>
                     <button class="styled-button" onclick="window.location.href='Bio_Prac_4.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../biology/Biologia.html'">Página principal</button>
+                    <a href="https://v2-38ue.onrender.com/biology/Biologia.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 

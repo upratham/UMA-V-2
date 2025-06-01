@@ -184,25 +184,25 @@ $practical_number = "B1";
     </button>
 
     <!-- Cuestionario tab: now submits the form directly -->
-    <form id="cuestionarioForm" action="/V2/V2/questionnaire.php" method="GET" style="display:inline; margin:0; padding:0;">
+     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
     <input type="hidden" name="practical_number" value="<?php echo htmlspecialchars($practical_number); ?>">
     <button type="submit" class="tab-button active" style="margin:0; padding:20px 20px; display:inline-flex; align-items:center; justify-content:center;">
         <img src="questionaire photo.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
         Cuestionario
     </button>
 </form>
-    </div>
+</div>
 
     <div class="container">
         <!-- Sidebar (Contents) -->
         <nav class="sidebar">
         <h3>Contents</h3>
             <ul>
-                <li><a href="#Objetivos">Objetivos</a></li>
-                <li><a href="#Introducción">Introducción</a></li>
-                <li><a href="#Procedimiento">Procedimiento</a></li>
-                <li><a href="#Resultados">Resultados</a></li>
-                <li><a href="#Referencia">Referencia</a></li>
+                <li><a href="#Objetivos">OBJETIVOS</a></li>
+                <li><a href="#Introducción">INTRODUCCION</a></li>
+                <li><a href="#Procedimiento">PROCEDIMIENTO</a></li>
+                <li><a href="#Resultados">RESULTADOS</a></li>
+                <li><a href="#Referencia">REFERENCIA</a></li>
             </ul>
         </nav>
 
@@ -369,7 +369,7 @@ $practical_number = "B1";
     
                 <h2 id="Referencia">Referencia</h2>
                 <p>Source: <a href="https://www.kenhub.com/es/library/anatomia-es/terminologia-anatomica-es">Kenhub - Terminología anatómica</a></p>
-</div>
+            </div>
 
 
 <!-- Video Section -->
@@ -388,9 +388,6 @@ $practical_number = "B1";
 <button onclick="openSimulation()" class="simulation-btn">Open Simulation</button>
 </div>
 
-<!---Questionaire--->
-
-</div>
 
 <script>
 // Function to open the simulation in a new window
@@ -449,36 +446,36 @@ function openSimulation() {
 </script>
 
 <footer>
-<style>
-    .button-container {
-        display: flex;
-        justify-content: center; /* Centers buttons horizontally */
-        gap: 15px; /* Adds spacing between buttons */
-        margin: 20px 0;
-        padding: 10px;
-    }
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centers buttons horizontally */
+            gap: 15px; /* Adds spacing between buttons */
+            margin: 20px 0;
+            padding: 10px;
+        }
 
-    .styled-button {
-        padding: 8px 16px; /* Adjusted padding to make buttons smaller */
-        background-color: #E40D5E;
-        color: white;
-        border: none;
-        border-radius: 5px; /* Slightly rounded corners */
-        cursor: pointer;
-        font-size: 14px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+        .styled-button {
+            padding: 8px 16px; /* Adjusted padding to make buttons smaller */
+            background-color: #E40D5E;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Slightly rounded corners */
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
-    .styled-button:hover {
-        background-color: #b00a48; /* Slightly darker red on hover */
-        transform: scale(1.05); /* Slightly enlarges on hover */
-    }
-</style>
+        .styled-button:hover {
+            background-color: #b00a48; /* Slightly darker red on hover */
+            transform: scale(1.05); /* Slightly enlarges on hover */
+        }
+        </style>
 
 <div class="button-container">
                     <button class="styled-button" onclick="window.location.href='Chem_Prac_5.php'">Próxima práctica</button>
-                    <button class="styled-button" onclick="window.location.href='Chem_Prac_4.php'">Práctica anterior</button>
-                    <button class="styled-button" onclick="window.location.href='../chemistry/Química.html'">Inicio</button>
+                    <button class="styled-button" onclick="window.location.href='Chem_Prac_3.php'">Práctica anterior</button>
+                    <a href="https://v2-38ue.onrender.com/chemistry/Química.html" class="styled-button">Página principal</a>
                 </div>
 </footer>
 
