@@ -180,10 +180,10 @@ $practical_number = "C9"
         Video
     </button>
 
-    <button class="tab-button active" onclick="openTab('Simulation')">
-        <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
-        Simulation
-    </button>
+    <button class="tab-button active" onclick="window.location.href='https://chem-sim-wnth.vercel.app/experiment5';">
+    <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+    Simulación
+</button>
 
     <!-- Cuestionario tab: now submits the form directly -->
     <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
@@ -458,14 +458,7 @@ $practical_number = "C9"
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xNYASNEdgg8" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<!-- Simulator Section -->
-<div id="Simulation" class="content">
-<h3>Simulation</h3>
-<p>Here you can try your experiment and learn about practicals.</p>
 
-<!-- Button to open the simulation in a new window -->
-<button onclick="openSimulation()" class="simulation-btn">Open Simulation</button>
-</div>
 
 <!---Questionaire--->
 

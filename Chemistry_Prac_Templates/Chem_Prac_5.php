@@ -178,10 +178,10 @@ $practical_number = "B1";
         Video
     </button>
 
-    <button class="tab-button active" onclick="openTab('Simulation')">
-        <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
-        Simulation
-    </button>
+    <button class="tab-button active" onclick="window.location.href='https://chem-sim-wnth.vercel.app/experiment3';">
+    <img src="pic.jpg" alt="Book" style="width:50px; height:50px; vertical-align:middle; margin-right:5px;">
+    Simulación
+</button>
 
     <!-- Cuestionario tab: now submits the form directly -->
      <form id="cuestionarioForm" action="../quessionnair/index.html" method="GET" style="display:inline; margin:0; padding:0;">
@@ -396,49 +396,7 @@ $practical_number = "B1";
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xNYASNEdgg8" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<!-- Simulator Section -->
-<div id="Simulation" class="content">
-<h3>Simulation</h3>
-<p>Here you can try your experiment and learn about practicals.</p>
 
-<!-- Button to open the simulation in a new window -->
-<button onclick="openSimulation()" class="simulation-btn">Open Simulation</button>
-</div>
-
-<script>
-// Function to open the simulation in a new window
-function openSimulation() {
-    window.open('https://chemitry-experiments-simulation.vercel.app/experiment4', '_blank');
-}
-</script>
-
-<!-- CSS Styling for the button -->
-<style>
-/* Styling the simulation button */
-.simulation-btn {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
-    padding: 15px 32px; /* Add padding around text */
-    text-align: center; /* Center the text */
-    font-size: 16px; /* Larger font size */
-    border: none; /* Remove default border */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
-}
-
-/* Change background color on hover */
-.simulation-btn:hover {
-    background-color: #45a049; /* Slightly darker green */
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-
-/* Add a shadow effect when the button is clicked */
-.simulation-btn:active {
-    background-color: #3e8e41; /* Even darker green */
-    transform: scale(0.98); /* Slightly shrink the button when clicked */
-}
-</style>
 
 <script>
     function openTab(tabId) {
